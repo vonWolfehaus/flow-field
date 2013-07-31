@@ -1,0 +1,449 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ca",
+				"canvas	Tag"
+			],
+			[
+				"add",
+				"addEventListener"
+			],
+			[
+				"obj",
+				"objects"
+			],
+			[
+				"ma",
+				"mapData"
+			],
+			[
+				"comp",
+				"componentName"
+			],
+			[
+				"rad",
+				"radii"
+			],
+			[
+				"Vec",
+				"Vector"
+			],
+			[
+				"in",
+				"invmass"
+			],
+			[
+				"tra",
+				"trackRect"
+			],
+			[
+				"fo",
+				"for	for (…) {…}"
+			],
+			[
+				"mous",
+				"mouseX"
+			],
+			[
+				"re",
+				"rects"
+			],
+			[
+				"num",
+				"numRects"
+			],
+			[
+				"new",
+				"newMass"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"back",
+				"background-position"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 522,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "flowfield.sublime-project",
+			"settings":
+			{
+				"buffer_size": 444,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 119.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/B/c2 Web/New Text Document.txt",
+		"/B/c2 Experiments/playtime.sublime-project",
+		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/B/c2 Experiments/FlowField/def/require.d.ts",
+		"/B/git/curl/test/basic.html",
+		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/B/c2 Experiments/FlowField/lib/curl.js",
+		"/B/c2 Games/Cubiso/README.md",
+		"/B/git/von-physics/javascript/threejs_voxelpainter.html",
+		"/B/git/von-physics/javascript/AABB3.js",
+		"/B/git/von-physics/javascript/geom/Cube.js",
+		"/B/git/von-physics/javascript/geom/Rectangle.js",
+		"/B/c2 Games/FirefallFlash/src/pixelhaus/PxGrid.as",
+		"/B/c2 Games/FirefallFlash/src/pixelhaus/PxGridCell.as",
+		"/B/c2 Games/FlowField/scripts/Grid.ts",
+		"/B/c2 Games/FirefallFlash/src/pixelhaus/PxGridCellMeta.as",
+		"/B/c2 Games/UnityCar/README.md",
+		"/B/c2 Games/tests/nintendo/mm_impact/lib/game/main.js",
+		"/B/c2 Games/tests/nintendo/mm_enchant/src/minimarch.js",
+		"/B/c2 Games/tests/nintendo/mm_enchant/lib/avatar.enchant.js",
+		"/B/c2 Games/tests/nintendo/mm_enchant/enchant.js-builds-0.7.0/examples/expert/rpg/game.js",
+		"/B/c2 Games/tests/nintendo/mm_enchant/enchant.js-builds-0.7.0/build/enchant.js",
+		"/B/c2 Games/tests/nintendo/mm_enchant/index.html",
+		"/B/git/von-physics/javascript/aabb.html",
+		"/B/c2 Games/tests/nintendo/mm_enchant/src/main.js",
+		"/B/c2 Games/tests/nintendo/mm_enchant/enchant.js-builds-0.7.0/build/plugins/avatar.enchant.js",
+		"/B/c2 Games/tests/nintendo/mm_enchant/enchant.js-builds-0.7.0/examples/expert/shooting/main.js",
+		"/B/c2 Games/tests/nintendo/mm_impact/lib/game/levels/test.js",
+		"/B/c2 Games/tests/nintendo/mm_enchant/enchant.js-builds-0.7.0/examples/expert/rpg/index.html",
+		"/B/c2 Games/tests/nintendo/mm_enchant/enchant.js-builds-0.7.0/examples/expert/action/index.html",
+		"/B/c2 Games/tests/nintendo/mm_enchant/main.js",
+		"/B/c2 Games/tests/nintendo/mm_impact/lib/game/entities/spike.js",
+		"/B/c2 Games/tests/nintendo/mm_enchant/enchant.js-builds-0.7.0/examples/beginner/map/index.html",
+		"/B/c2 Games/tests/nintendo/mm_enchant/enchant.js-builds-0.7.0/build/plugins/extendMap.enchant.js",
+		"/B/c2 Games/tests/nintendo/mm_enchant/enchant.js-builds-0.7.0/examples/developers/eventViewer/main.js",
+		"/B/c2 Games/tests/nintendo/mm_enchant/enchant.js-builds-0.7.0/examples/expert/action/game.js",
+		"/B/c2 Games/tests/nintendo/mm_enchant/enchant.js-builds-0.7.0/build/plugins/nineleap.enchant.js",
+		"/B/c2 Games/Playtime/README.md",
+		"/B/c2 Games/Playtime/index.html",
+		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/TypeScript/typescript.sublime-build",
+		"/B/c2 Games/Playtime/scripts/Collision.ts",
+		"/B/c2 Games/Playtime/assets/maps/platform-test-1.json",
+		"/B/git/phaser/Tests/tilemap/collision.ts",
+		"/B/git/phaser/Tests/tilemap/collide with tile.ts",
+		"/B/git/phaser/Tests/collision/collide sprites.ts",
+		"/B/git/phaser/Tests/collision/falling balls.ts",
+		"/B/c2 Games/Playtime/scripts/Phaser/Game.ts",
+		"/B/git/phaser/Tests/physics/aabb vs aabb 1.ts",
+		"/B/git/phaser/Tests/index.php",
+		"/B/git/phaser/Tests/phaser.css",
+		"/B/git/phaser/Phaser/physics/PhysicsManager.ts",
+		"/B/git/phaser/Phaser/physics/Body.ts",
+		"/B/c2 Games/Playtime/scripts/Phaser/Phaser.ts",
+		"/B/c2 Games/Playtime/scripts/Phaser/phaser.js",
+		"/B/git/phaser/GruntFile.js",
+		"/B/git/phaser/Plugins/verlet/VerletManager.ts",
+		"/B/c2 Games/Playtime/scripts/Tiled.ts",
+		"/B/c2 Games/Playtime/scripts/phaser.js",
+		"/B/git/von-physics/TODO.md",
+		"/B/c2 Games/SamuraiCode/README.md",
+		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/B/c2 Games/README.md",
+		"/B/git/von-physics/javascript/AABB3D.js",
+		"/B/git/von-physics/javascript/AABB.js",
+		"/B/git/von-physics/javascript/BaseObject.js",
+		"/B/git/von-physics/javascript/engine/BaseObject.js",
+		"/B/git/von-physics/javascript/engine/Engine.js",
+		"/B/git/von-physics/javascript/MathUtil.js",
+		"/B/git/von-physics/javascript/Vector2D.js",
+		"/B/git/von-physics/javascript/balls_vector.html",
+		"/B/git/von-physics/javascript/aabb_vs_balls.html",
+		"/B/Images/New Text Document.txt",
+		"/B/git/von-physics/README.md",
+		"/B/git/von-physics/javascript/geom/Circle.js",
+		"/B/c2 Web/Tests/Collision/SATjs/README.md",
+		"/B/c2 Web/Tests/Collision/SATjs/impulse.html",
+		"/B/git/von-physics/javascript/balls_trig.html",
+		"/B/c2 Web/Tests/Collision/SATjs/AABBvsAABB.js",
+		"/B/c2 Web/Tests/Collision/ball_physics.htm",
+		"/B/c2 Web/Tests/Collision/SATjs/min.html",
+		"/B/c2 Web/Tests/Collision/SATjs/impulse_simple.html",
+		"/B/git/jsutilities/README.md",
+		"/B/git/von-physics/javascript/Manifold.js",
+		"/B/c2 Web/Tests/Collision/SATjs/AABB.js",
+		"/B/c2 Web/Tests/Collision/SATjs/impulse_22.html",
+		"/B/c2 Code/JavaScript/impulse.js",
+		"/B/c2 Web/Tests/Collision/SATjs/MathUtil.js",
+		"/B/c2 Web/Tests/Collision/SATjs/Manifold.js",
+		"/B/git/microphysics.js/codeflow/physics.js",
+		"/B/git/microphysics.js/simple-demo/index.html",
+		"/B/git/microphysics.js/simple-demo/index.js",
+		"/B/c2 Web/Tests/Collision/SATjs/Vector2D.js",
+		"/B/git/microphysics.js/THREEx.microphysics.js",
+		"/B/c2 Web/Tests/Collision/SATjs/Circle.js",
+		"/B/c2 Web/Tests/Collision/SATjs/Rectangle.js",
+		"/C/Users/Von/Documents/EvilSmurf.xml",
+		"/C/Users/Von/Downloads/EvilSmurf.xml",
+		"/B/git/vonTafl/_todo.txt",
+		"/B/git/vonTafl/js/Main.ts",
+		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/Theme - Flatland/Flatland.tmTheme",
+		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/Theme - Flatland/Flatland.sublime-theme",
+		"/B/c2 Games/vonTafl/js/Main.ts",
+		"/B/c2 Games/vonTafl/_todo.txt",
+		"/B/c2 Games/vonTafl/index.html",
+		"/B/c2 Games/vonTafl/style.css",
+		"/B/git/vonTafl/.gitignore",
+		"/B/c2Games/vonTafl/.gitignore",
+		"/B/c2Games/vonTafl/js/Main.ts"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Px",
+			"int",
+			"Number",
+			"16",
+			"15",
+			"14",
+			"13",
+			"12",
+			"11",
+			"10",
+			"9",
+			"8",
+			"7",
+			"6",
+			"5",
+			"2",
+			"4",
+			"21",
+			"0",
+			"enchant.Entity",
+			"event",
+			"_delta",
+			"sf",
+			"Rectangle",
+			"manifold",
+			"normal",
+			"bbox",
+			"abox",
+			"m",
+			"_scratchVec",
+			"n",
+			"float",
+			"canvasHeight",
+			"canvasWidth",
+			"dynamic",
+			"collideAABB",
+			"handleContact",
+			"alt+",
+			"caret"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"number",
+			"15",
+			"14",
+			"13",
+			"12",
+			"11",
+			"10",
+			"9",
+			"8",
+			"7",
+			"6",
+			"4",
+			"1",
+			"3",
+			"20",
+			"23",
+			"evt",
+			"_v",
+			"von",
+			"_manifold",
+			"_normal",
+			"b",
+			"a",
+			"manifold",
+			"norm",
+			"dist",
+			"distVec",
+			"var",
+			"sf.worldHeight",
+			"sf.worldWidth"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 522,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								198,
+								198
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "flowfield.sublime-project",
+					"settings":
+					{
+						"buffer_size": 444,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								251,
+								251
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 171.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

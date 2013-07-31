@@ -1,0 +1,25 @@
+{
+	"folders":
+	[
+		{
+			"path": "/B/c2 Experiments/FlowField"
+		}
+	],
+	"build_systems":
+	[
+		{
+			"name": "TS Out",
+			"cmd": [
+				"tsc",
+				"--target",
+				"ES5",
+				"--sourcemap",
+				"--out",
+				"$project_path/bin/app.js",
+				"$project_path/src/Main.ts"
+			],
+			"file_regex": "(.*\\.ts?)\\s\\(([0-9]+)\\,([0-9]+)\\)\\:\\s(...*?)$",
+			"selector": "source.ts"
+		}
+	]
+}
