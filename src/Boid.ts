@@ -1,12 +1,13 @@
 /// <reference path="../def/pixi.d.ts" />
 /// <reference path="Kai.ts" />
 //// <reference path="Vec2.ts" />
+//// <reference path="LocalState.ts" />
 
 module ff {
 	
 	export class Boid {
 		public sprite:PIXI.Sprite;
-		public state:;
+		public state:LocalState;
 		
 		// public position:Vec2 = new Vec2();
 		// public velocity:Vec2 = new Vec2();
