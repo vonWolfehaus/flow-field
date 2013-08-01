@@ -1,7 +1,7 @@
 /// <reference path="../def/pixi.d.ts" />
 /// <reference path="Kai.ts" />
-//// <reference path="Vec2.ts" />
-//// <reference path="LocalState.ts" />
+/// <reference path="../lib/Vec2.ts" />
+/// <reference path="LocalState.ts" />
 
 module ff {
 	
@@ -9,7 +9,7 @@ module ff {
 		public sprite:PIXI.Sprite;
 		public state:LocalState;
 		
-		// public position:Vec2 = new Vec2();
+		public position:Vec2 = new Vec2();
 		// public velocity:Vec2 = new Vec2();
 		
 		constructor(x:number = 0, y:number = 0) {
@@ -23,9 +23,11 @@ module ff {
 			this.sprite.anchor.y = 0.5;
 
 			// move the this.sprite t the center of the screen
-			this.sprite.position.x = x;
-			this.sprite.position.y = y;
-
+			// this.sprite.position.x = x;
+			// this.sprite.position.y = y;
+			
+			this.sprite.position = this.position.reset(x, y);
+			
 			Kai.stage.addChild(this.sprite);
 		}
 		
