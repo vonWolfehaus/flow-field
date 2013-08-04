@@ -10,7 +10,7 @@
 
 module von {
 	
-	var _speed:number = 2;
+	var _speed:number = Math.random()*10-5;
 	
 	export class Boid {
 		
@@ -20,13 +20,14 @@ module von {
 		// health:Health = new Health();
 		
 		sprite:PIXI.Sprite;
-		state:LocalState = new LocalState(); // interacts with the macro partition grid
+		state:LocalState = new LocalState(); // component that hooks into the broadphase grid
 		
-		collider:Collider2 = new Collider2();
+		// collider:Collider2 = new Collider2();
 		steering:SteeringAI = new SteeringAI();
 		
 		constructor(x:number = 0, y:number = 0) {
 			this.position.reset(x, y);
+			this.velocity.reset(Math.random()*_speed-_speed*0.5, Math.random()*_speed-_speed*0.5);
 			
 			var texture = PIXI.Texture.fromImage('img/entity.png');
 			this.sprite = new PIXI.Sprite(texture);
@@ -37,8 +38,10 @@ module von {
 			Kai.stage.addChild(this.sprite);
 			
 			// link references
-			this.sprite.position = this.collider.position = this.steering.position = this.position;
-			this.collider.velocity = this.steering.velocity = this.velocity;
+			this.sprite.position = this.position;
+			// this.sprite.position = this.steering.position = this.position;
+			// this.steering.velocity = this.velocity;
+			
 			
 			// this won't work; we will want to add gameplay logic to individual behaviors somehow
 			// or maybe just use a tag system and pass in those as priorities? eg Avoid 'some-enemy-type' with 20 points of priority
@@ -54,8 +57,16 @@ module von {
 		}
 		
 		public update():void {
-			this.steering.update();
+			var steerForce:Vec2 = this.steering.update(this.velocity);
+			
+			// this.velocity.copy(steerForce);
+			this.velocity.add(steerForce);
 			// this.collider.update();
+			
+			this.velocity.normalize().multiplyScalar(_speed); // this is a little more stable
+			// this.velocity.truncate(_speed);
+			
+			this.position.add(this.velocity);
 			
 			this.sprite.rotation = Math.atan2(this.velocity.y, this.velocity.x);
 			

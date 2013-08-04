@@ -152,7 +152,7 @@ class Vec2 {
 		/*var l = this.getLength();
 		if (l > max) this.setLength(l);*/
 		var i:number,
-			l = this.getLength();
+			l:number = this.getLength();
 	    
 	    if (l === 0) return this;
 	    

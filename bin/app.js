@@ -493,14 +493,15 @@ var von;
 })(von || (von = {}));
 var von;
 (function (von) {
+    var _desiredVelocity = new Vec2();
+    var _maxSpeed;
+
     var SteeringAI = (function () {
         function SteeringAI() {
             this.behaviors = [];
-            this.force = new Vec2();
-            this._desiredVelocity = new Vec2();
         }
         SteeringAI.prototype.configure = function (options) {
-            this._maxSpeed = options.maxSpeed;
+            _maxSpeed = options.maxSpeed;
         };
 
         SteeringAI.prototype.add = function () {
@@ -514,22 +515,21 @@ var von;
             }
         };
 
-        SteeringAI.prototype.update = function () {
+        SteeringAI.prototype.update = function (vel) {
             var i, l = this.behaviors.length, result;
 
-            this._desiredVelocity.reset();
+            _desiredVelocity.reset();
 
             for (i = 0; i < l; i++) {
-                result = this.behaviors[i].update(this.velocity);
+                result = this.behaviors[i].update(vel);
 
-                this._desiredVelocity.add(result);
+                _desiredVelocity.add(result);
             }
 
-            this._desiredVelocity.subtract(this.velocity);
-            this.force.copy(this._desiredVelocity).truncate(this._maxSpeed);
+            _desiredVelocity.subtract(vel);
+            _desiredVelocity.truncate(_maxSpeed);
 
-            this.velocity.copy(this.force);
-            this.position.add(this.velocity);
+            return _desiredVelocity;
         };
         return SteeringAI;
     })();
@@ -539,23 +539,24 @@ var von;
 (function (von) {
     var _circleCenter = new Vec2();
     var _displacement = new Vec2();
-
     var _wanderAngle = 0;
+
+    var _timer = 0;
+    var _targetAngle = 0;
+
+    var _tau = Math.PI * 2;
+    var _hpi = Math.PI / 2;
 
     var Wander = (function () {
         function Wander(settings) {
-            this.wanderAngle = 0;
             this.circleDistance = 30;
             this.circleRadius = 20;
-            this.angleDelta = 0.1;
-            if (settings)
-                this.configure(settings);
+            this.aggitation = 900;
+            this.capriciousness = 50;
         }
         Wander.prototype.configure = function (settings) {
-            this.wanderAngle = settings.wanderAngle;
             this.circleDistance = settings.circleDistance;
             this.circleRadius = settings.circleRadius;
-            this.angleDelta = settings.angleDelta;
         };
 
         Wander.prototype.update = function (vel) {
@@ -566,12 +567,14 @@ var von;
             _displacement.reset(0, -1);
             _displacement.multiplyScalar(this.circleRadius);
 
+            if (_timer-- <= 0) {
+                _timer = this.aggitation + (Math.random() * this.capriciousness - this.capriciousness * 0.5);
+                _targetAngle = Math.random() * _tau - _tau * 0.5;
+            }
+
             var len = _displacement.getLength();
-            _displacement.x = Math.cos(_wanderAngle) * len;
-            _displacement.y = Math.sin(_wanderAngle) * len;
-
-            _wanderAngle += Math.random() * this.angleDelta - this.angleDelta * 0.5;
-
+            _displacement.x = Math.cos(_targetAngle) * len;
+            _displacement.y = Math.sin(_targetAngle) * len;
             _circleCenter.add(_displacement);
 
             return _circleCenter;
@@ -582,7 +585,7 @@ var von;
 })(von || (von = {}));
 var von;
 (function (von) {
-    var _speed = 2;
+    var _speed = Math.random() * 10 - 5;
 
     var Boid = (function () {
         function Boid(x, y) {
@@ -591,9 +594,9 @@ var von;
             this.position = new von.Position2();
             this.velocity = new von.Velocity2();
             this.state = new von.LocalState();
-            this.collider = new von.Collider2();
             this.steering = new von.SteeringAI();
             this.position.reset(x, y);
+            this.velocity.reset(Math.random() * _speed - _speed * 0.5, Math.random() * _speed - _speed * 0.5);
 
             var texture = PIXI.Texture.fromImage('img/entity.png');
             this.sprite = new PIXI.Sprite(texture);
@@ -603,8 +606,7 @@ var von;
 
             Kai.stage.addChild(this.sprite);
 
-            this.sprite.position = this.collider.position = this.steering.position = this.position;
-            this.collider.velocity = this.steering.velocity = this.velocity;
+            this.sprite.position = this.position;
 
             this.steering.add(new von.Wander());
 
@@ -613,7 +615,13 @@ var von;
             });
         }
         Boid.prototype.update = function () {
-            this.steering.update();
+            var steerForce = this.steering.update(this.velocity);
+
+            this.velocity.add(steerForce);
+
+            this.velocity.normalize().multiplyScalar(_speed);
+
+            this.position.add(this.velocity);
 
             this.sprite.rotation = Math.atan2(this.velocity.y, this.velocity.x);
 

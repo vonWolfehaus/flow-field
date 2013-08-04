@@ -10,12 +10,9 @@ module von {
 	
 	export class SteeringAI {
 		
-		position:Position2; // must be set outside
-		velocity:Velocity2;
-		
 		behaviors:IBehavior[] = [];
 		
-		force:Vec2 = new Vec2();
+		// force:Vec2 = new Vec2();
 		
 		constructor() {
 			
@@ -34,27 +31,21 @@ module von {
 			// console.log(this.behaviors);
 		}
 		
-		update():void {
+		update(vel:Velocity2):Vec2 {
 			var i, l = this.behaviors.length, result:Vec2;
 			
 			_desiredVelocity.reset();
 			
 			for (i = 0; i < l; i++) {
-				result = this.behaviors[i].update(this.velocity);
+				result = this.behaviors[i].update(vel);
 				
 				_desiredVelocity.add(result);
 			}
 			
-			_desiredVelocity.subtract(this.velocity);
-			this.force.copy(_desiredVelocity).truncate(_maxSpeed);
+			_desiredVelocity.subtract(vel);
+			_desiredVelocity.truncate(_maxSpeed);
 			
-			this.velocity.copy(this.force);
-			this.position.add(this.velocity);
-			// console.log(this.position);
-			
-			/*steering = desired_velocity - velocity
-			velocity = truncate (velocity + steering , max_speed)
-			position = position + velocity*/
+			return _desiredVelocity;
 		}
 	}
 }

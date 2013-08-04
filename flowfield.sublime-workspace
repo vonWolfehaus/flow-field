@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"mul",
+				"multiplyScalar"
+			],
+			[
+				"ma",
+				"_maxSpeed"
+			],
+			[
+				"st",
+				"steering"
+			],
+			[
+				"be",
+				"behaviors"
+			],
+			[
+				"a",
+				"alive"
+			],
+			[
 				"ca",
 				"canvas	Tag"
 			],
@@ -14,10 +34,6 @@
 			[
 				"obj",
 				"objects"
-			],
-			[
-				"ma",
-				"mapData"
 			],
 			[
 				"comp",
@@ -72,18 +88,10 @@
 	"buffers":
 	[
 		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 505,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "src/Main.ts",
 			"settings":
 			{
-				"buffer_size": 724,
+				"buffer_size": 903,
 				"line_ending": "Unix"
 			}
 		},
@@ -91,24 +99,32 @@
 			"file": "src/Kai.ts",
 			"settings":
 			{
-				"buffer_size": 124,
+				"buffer_size": 227,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Boid.ts",
+			"file": "src/entities/Boid.ts",
 			"settings":
 			{
-				"buffer_size": 991,
+				"buffer_size": 2419,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/LocalState.ts",
+			"file": "src/components/SteeringAI.ts",
 			"settings":
 			{
-				"buffer_size": 98,
-				"line_ending": "Unix"
+				"buffer_size": 1271,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/components/behaviors/Wander.ts",
+			"settings":
+			{
+				"buffer_size": 1665,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -120,19 +136,11 @@
 			}
 		},
 		{
-			"file": "/B/git/von-physics/javascript/AABB.js",
+			"file": "src/lib/Vec2.ts",
 			"settings":
 			{
-				"buffer_size": 573,
+				"buffer_size": 4530,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "def/pixi.d.ts",
-			"settings":
-			{
-				"buffer_size": 4269,
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -160,10 +168,36 @@
 	},
 	"file_history":
 	[
+		"/B/c2 Experiments/FlowField/bin/app.js",
+		"/B/c2 Experiments/FlowField/src/lib/Vec2.ts",
+		"/B/c2 Experiments/FlowField/src/components/Collider2.ts",
+		"/B/c2 Experiments/FlowField/index.html",
+		"/B/c2 Experiments/FlowField/src/components/behaviors/IBehavior.ts",
+		"/B/External Libraries/SteeringBehaviorsWanderSourceFiles/v1 - wander/src/Game.as",
+		"/B/External Libraries/SteeringBehaviorsWanderSourceFiles/v1 - wander/src/Main.as",
+		"/B/External Libraries/SteeringBehaviorsWanderSourceFiles/v1 - wander/src/Boid.as",
+		"/B/c2 Experiments/FlowField/src/components/Velocity2.ts",
+		"/B/git/microphysics.js/codeflow/webgl/vector.js",
+		"/B/c2 Experiments/FlowField/src/lib/SignalBinding.ts",
+		"/B/c2 Experiments/FlowField/src/components/Health.ts",
+		"/B/c2 Experiments/FlowField/src/lib/Signal.ts",
+		"/B/git/von-physics/javascript/balls_vector.html",
+		"/B/c2 Experiments/FlowField/src/Boid.ts",
+		"/B/c2 Experiments/FlowField/src/Entity.ts",
+		"/B/c2 Experiments/FlowField/src/components/SteeringAI.ts",
+		"/B/c2 Experiments/FlowField/src/components/Position2.ts",
+		"/B/c2 Experiments/FlowField/src/LocalState.ts",
+		"/B/c2 Experiments/FlowField/src/lib/Vec2js.js",
+		"/B/c2 Experiments/FlowField/src/components/behaviors/Wander.ts",
+		"/B/c2 Experiments/FlowField/src/components/input/IInput.ts",
+		"/B/c2 Experiments/FlowField/src/components/Physic2.ts",
+		"/B/git/von-physics/javascript/AABB.js",
+		"/B/c2 Experiments/FlowField/def/pixi.d.ts",
+		"/B/c2 Experiments/FlowField/src/math/Vec2.ts",
+		"/B/c2 Experiments/FlowField/lib/Vec2.ts",
+		"/B/c2 Experiments/FlowField/src/components/Position.ts",
 		"/B/Images/Manga Art/Hent/New Text Document.txt",
 		"/B/c2 Experiments/FlowField/src/Position.ts",
-		"/B/c2 Experiments/FlowField/src/Entity.ts",
-		"/B/c2 Experiments/FlowField/def/pixi.d.ts",
 		"/B/Images/New Text Document.txt",
 		"/B/c2 Experiments/FlowField/lib/Vec2.js",
 		"/B/git/von-physics/javascript/Vector2D.js",
@@ -234,12 +268,10 @@
 		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/B/c2 Games/README.md",
 		"/B/git/von-physics/javascript/AABB3D.js",
-		"/B/git/von-physics/javascript/AABB.js",
 		"/B/git/von-physics/javascript/BaseObject.js",
 		"/B/git/von-physics/javascript/engine/BaseObject.js",
 		"/B/git/von-physics/javascript/engine/Engine.js",
 		"/B/git/von-physics/javascript/MathUtil.js",
-		"/B/git/von-physics/javascript/balls_vector.html",
 		"/B/git/von-physics/javascript/aabb_vs_balls.html",
 		"/B/git/von-physics/README.md",
 		"/B/git/von-physics/javascript/geom/Circle.js",
@@ -263,20 +295,7 @@
 		"/B/c2 Web/Tests/Collision/SATjs/Vector2D.js",
 		"/B/git/microphysics.js/THREEx.microphysics.js",
 		"/B/c2 Web/Tests/Collision/SATjs/Circle.js",
-		"/B/c2 Web/Tests/Collision/SATjs/Rectangle.js",
-		"/C/Users/Von/Documents/EvilSmurf.xml",
-		"/C/Users/Von/Downloads/EvilSmurf.xml",
-		"/B/git/vonTafl/_todo.txt",
-		"/B/git/vonTafl/js/Main.ts",
-		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/Theme - Flatland/Flatland.tmTheme",
-		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/Theme - Flatland/Flatland.sublime-theme",
-		"/B/c2 Games/vonTafl/js/Main.ts",
-		"/B/c2 Games/vonTafl/_todo.txt",
-		"/B/c2 Games/vonTafl/index.html",
-		"/B/c2 Games/vonTafl/style.css",
-		"/B/git/vonTafl/.gitignore",
-		"/B/c2Games/vonTafl/.gitignore",
-		"/B/c2Games/vonTafl/js/Main.ts"
+		"/B/c2 Web/Tests/Collision/SATjs/Rectangle.js"
 	],
 	"find":
 	{
@@ -291,9 +310,13 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"public ",
+			"bool",
+			"?:",
+			"bool",
 			"sprite",
 			"bool",
 			"bunny",
@@ -343,6 +366,10 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
+			"boolean",
+			":",
+			"boolean",
 			"this.sprite",
 			"boolean",
 			"sprite",
@@ -381,34 +408,34 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "src/Main.ts",
 					"settings":
 					{
-						"buffer_size": 505,
+						"buffer_size": 903,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								177,
-								177
+								698,
+								698
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/TypeScript/typescript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -419,18 +446,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "src/Main.ts",
+					"file": "src/Kai.ts",
 					"settings":
 					{
-						"buffer_size": 724,
+						"buffer_size": 227,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								325,
-								325
+								32,
+								32
 							]
 						],
 						"settings":
@@ -445,44 +472,45 @@
 				},
 				{
 					"buffer": 2,
-					"file": "src/Kai.ts",
+					"file": "src/entities/Boid.ts",
 					"settings":
 					{
-						"buffer_size": 124,
+						"buffer_size": 2419,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								121,
-								121
+								1968,
+								1968
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/TypeScript/typescript.tmLanguage"
+							"syntax": "Packages/TypeScript/typescript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 126.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "src/Boid.ts",
+					"file": "src/components/SteeringAI.ts",
 					"settings":
 					{
-						"buffer_size": 991,
+						"buffer_size": 1271,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								923,
-								923
+								405,
+								405
 							]
 						],
 						"settings":
@@ -498,26 +526,27 @@
 				},
 				{
 					"buffer": 4,
-					"file": "src/LocalState.ts",
+					"file": "src/components/behaviors/Wander.ts",
 					"settings":
 					{
-						"buffer_size": 98,
+						"buffer_size": 1665,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								93,
-								93
+								856,
+								856
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/TypeScript/typescript.tmLanguage"
+							"syntax": "Packages/TypeScript/typescript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 42.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -544,52 +573,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1671.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/B/git/von-physics/javascript/AABB.js",
-					"settings":
-					{
-						"buffer_size": 573,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "def/pixi.d.ts",
+					"buffer": 6,
+					"file": "src/lib/Vec2.ts",
 					"settings":
 					{
-						"buffer_size": 4269,
+						"buffer_size": 4530,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3103,
-								3103
+								976,
+								976
 							]
 						],
 						"settings":
@@ -598,7 +600,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1853.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
