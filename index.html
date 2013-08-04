@@ -17,15 +17,16 @@
 </head>
 <body>
 
+<canvas id="debug"></canvas>
 
-<script type="text/javascript" src="lib/pixi.js"></script>
+<script type="text/javascript" src="src/lib/pixi.js"></script>
 <script type="text/javascript" src="bin/app.js"></script>
 <script type="text/javascript">
-(function() {
-	window.addEventListener('load', function(evt) {
-		var game = new ff.Main();
-	});
-}());
+
+window.addEventListener('load', function(evt) {
+	var game = new von.Main(document.getElementById('debug'));
+});
+
 </script>
 </body>
 </html>

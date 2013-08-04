@@ -75,15 +75,63 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 522,
+				"buffer_size": 505,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "flowfield.sublime-project",
+			"file": "src/Main.ts",
 			"settings":
 			{
-				"buffer_size": 444,
+				"buffer_size": 724,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Kai.ts",
+			"settings":
+			{
+				"buffer_size": 124,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Boid.ts",
+			"settings":
+			{
+				"buffer_size": 991,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/LocalState.ts",
+			"settings":
+			{
+				"buffer_size": 98,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/B/git/von-physics/javascript/balls_vector.html",
+			"settings":
+			{
+				"buffer_size": 4429,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/B/git/von-physics/javascript/AABB.js",
+			"settings":
+			{
+				"buffer_size": 573,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "def/pixi.d.ts",
+			"settings":
+			{
+				"buffer_size": 4269,
 				"line_ending": "Unix"
 			}
 		}
@@ -112,6 +160,16 @@
 	},
 	"file_history":
 	[
+		"/B/Images/Manga Art/Hent/New Text Document.txt",
+		"/B/c2 Experiments/FlowField/src/Position.ts",
+		"/B/c2 Experiments/FlowField/src/Entity.ts",
+		"/B/c2 Experiments/FlowField/def/pixi.d.ts",
+		"/B/Images/New Text Document.txt",
+		"/B/c2 Experiments/FlowField/lib/Vec2.js",
+		"/B/git/von-physics/javascript/Vector2D.js",
+		"/B/c2 Experiments/FlowField/src/Kai.ts",
+		"/B/c2 Experiments/FlowField/flowfield.sublime-project",
+		"/C/Users/Von/Desktop/cando.txt",
 		"/B/c2 Web/New Text Document.txt",
 		"/B/c2 Experiments/playtime.sublime-project",
 		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
@@ -181,10 +239,8 @@
 		"/B/git/von-physics/javascript/engine/BaseObject.js",
 		"/B/git/von-physics/javascript/engine/Engine.js",
 		"/B/git/von-physics/javascript/MathUtil.js",
-		"/B/git/von-physics/javascript/Vector2D.js",
 		"/B/git/von-physics/javascript/balls_vector.html",
 		"/B/git/von-physics/javascript/aabb_vs_balls.html",
-		"/B/Images/New Text Document.txt",
 		"/B/git/von-physics/README.md",
 		"/B/git/von-physics/javascript/geom/Circle.js",
 		"/B/c2 Web/Tests/Collision/SATjs/README.md",
@@ -238,6 +294,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sprite",
+			"bool",
+			"bunny",
 			"Px",
 			"int",
 			"Number",
@@ -284,6 +343,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"this.sprite",
+			"boolean",
+			"sprite",
 			"",
 			"number",
 			"15",
@@ -325,7 +387,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -333,15 +395,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 522,
+						"buffer_size": 505,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								198,
-								198
+								177,
+								177
 							]
 						],
 						"settings":
@@ -357,26 +419,186 @@
 				},
 				{
 					"buffer": 1,
-					"file": "flowfield.sublime-project",
+					"file": "src/Main.ts",
 					"settings":
 					{
-						"buffer_size": 444,
+						"buffer_size": 724,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								251,
-								251
+								325,
+								325
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/TypeScript/typescript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/Kai.ts",
+					"settings":
+					{
+						"buffer_size": 124,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								121,
+								121
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/typescript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/Boid.ts",
+					"settings":
+					{
+						"buffer_size": 991,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								923,
+								923
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/typescript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/LocalState.ts",
+					"settings":
+					{
+						"buffer_size": 98,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								93,
+								93
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/typescript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/B/git/von-physics/javascript/balls_vector.html",
+					"settings":
+					{
+						"buffer_size": 4429,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1671.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/B/git/von-physics/javascript/AABB.js",
+					"settings":
+					{
+						"buffer_size": 573,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "def/pixi.d.ts",
+					"settings":
+					{
+						"buffer_size": 4269,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3103,
+								3103
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/typescript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1853.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

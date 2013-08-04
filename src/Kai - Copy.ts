@@ -1,4 +1,4 @@
-/// <reference path="definitions/pixi.d.ts" />
+/// <reference path="../def/pixi.d.ts" />
 
 /**
  * Global state resource.

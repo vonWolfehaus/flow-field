@@ -1,28 +1,35 @@
-/// <reference path="../def/pixi.d.ts" />
+/// <reference path="definitions/pixi.d.ts" />
 /// <reference path="Kai.ts" />
-/// <reference path="Boid.ts" />
+/// <reference path="entities/Boid.ts" />
 
-module ff {
+module von {
 	
 	var allTheThings = [];
+	var timer = 30;
 	
 	function update():void {
-		
+		var i;
+		for (i = 0; i < allTheThings.length; i++) {
+			allTheThings[i].update();
+		}
 		
 		Kai.renderer.render(Kai.stage);
 		
-		requestAnimFrame(update);
+		// if (timer-- > 0) {
+			requestAnimFrame(update);
+		// }
 	}
 	
 	export class Main {
-		constructor() {
-		 	Kai.stage = new PIXI.Stage(0x151515);
+		
+		constructor(debugCanvas) {
 		 	Kai.renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
-
-			document.body.appendChild(Kai.renderer.view);
+			document.body.insertBefore(Kai.renderer.view, debugCanvas);
+			
+			Kai.stage = new PIXI.Stage(0x151515);
 			
 			var i, x = 0, y = 0,
-				amount = 30, size = 50,
+				amount = 20, size = 50,
 				g = ~~(amount / 4);
 			
 			for (i = 0; i < amount; i++) {
