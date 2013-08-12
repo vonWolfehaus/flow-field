@@ -3,6 +3,7 @@ var Kai;
     Kai.stage;
     Kai.renderer;
 
+    Kai.debugCtx;
     Kai.components;
 
     Kai.elapsed;
@@ -529,6 +530,8 @@ var von;
             _desiredVelocity.subtract(vel);
             _desiredVelocity.truncate(_maxSpeed);
 
+            _desiredVelocity.draw(Kai.debugCtx, this.position.x, this.position.y);
+
             return _desiredVelocity;
         };
         return SteeringAI;
@@ -606,7 +609,7 @@ var von;
 
             Kai.stage.addChild(this.sprite);
 
-            this.sprite.position = this.position;
+            this.sprite.position = this.steering.position = this.position;
 
             this.steering.add(new von.Wander());
 
@@ -645,6 +648,9 @@ var von;
 
     function update() {
         var i;
+
+        Kai.debugCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
         for (i = 0; i < allTheThings.length; i++) {
             allTheThings[i].update();
         }
@@ -660,6 +666,7 @@ var von;
             document.body.insertBefore(Kai.renderer.view, debugCanvas);
 
             Kai.stage = new PIXI.Stage(0x151515);
+            Kai.debugCtx = debugCanvas.getContext('2d');
 
             var i, x = 0, y = 0, amount = 20, size = 50, g = ~~(amount / 4);
 

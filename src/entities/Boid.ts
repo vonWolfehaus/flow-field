@@ -1,5 +1,6 @@
 /// <reference path="../definitions/pixi.d.ts" />
 /// <reference path="../Kai.ts" />
+/// <reference path="../IEntity.ts" />
 /// <reference path="../components/Position2.ts" />
 /// <reference path="../components/Velocity2.ts" />
 /// <reference path="../components/Collider2.ts" />
@@ -12,9 +13,8 @@ module von {
 	
 	var _speed:number = Math.random()*10-5;
 	
-	export class Boid {
+	export class Boid implements IEntity {
 		
-		// components this entity uses
 		position:Position2 = new Position2();
 		velocity:Velocity2 = new Velocity2();
 		// health:Health = new Health();
@@ -38,8 +38,8 @@ module von {
 			Kai.stage.addChild(this.sprite);
 			
 			// link references
-			this.sprite.position = this.position;
-			// this.sprite.position = this.steering.position = this.position;
+			// this.sprite.position = this.position;
+			this.sprite.position = this.steering.position = this.position;
 			// this.steering.velocity = this.velocity;
 			
 			

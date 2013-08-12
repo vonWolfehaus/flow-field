@@ -9,6 +9,9 @@ module von {
 	
 	function update():void {
 		var i;
+		
+		Kai.debugCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+		
 		for (i = 0; i < allTheThings.length; i++) {
 			allTheThings[i].update();
 		}
@@ -27,6 +30,7 @@ module von {
 			document.body.insertBefore(Kai.renderer.view, debugCanvas);
 			
 			Kai.stage = new PIXI.Stage(0x151515);
+			Kai.debugCtx = debugCanvas.getContext('2d');
 			
 			var i, x = 0, y = 0,
 				amount = 20, size = 50,

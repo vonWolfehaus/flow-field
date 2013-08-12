@@ -12,6 +12,7 @@ module von {
 		
 		behaviors:IBehavior[] = [];
 		
+		position:Position2;
 		// force:Vec2 = new Vec2();
 		
 		constructor() {
@@ -44,6 +45,8 @@ module von {
 			
 			_desiredVelocity.subtract(vel);
 			_desiredVelocity.truncate(_maxSpeed);
+			
+			_desiredVelocity.draw(Kai.debugCtx, this.position.x, this.position.y);
 			
 			return _desiredVelocity;
 		}

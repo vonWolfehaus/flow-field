@@ -1,79 +1,63 @@
 /// <reference path="Kai.ts" />
+/// <reference path="Vec2.ts" />
 /// <reference path="IEntity.ts" />
 
 module von {
 	
+	var _sizeMulti:number;
+	
 	class Grid {
-		public width:number, height:number;
-		public cellSize:number, sizeMulti:number;
-		public size:number;
-		public cells:GridCell[];
+		width:number; // number of cells wide
+		height:number; // cells high
+		cellWidth:number; // size of cell in pixels
+		cellHeight:number;
 		
-		// collision helpers
-		public caster:Image;
-		public raySprite:Image;
-		public hitRect:Rectangle;
-		public angle:number;
-		public cosa:number;
-		public sina:number;
-		
-		public flxp:Point;
-		public flxpRef:Point;
-		public v1:Point;
-		public v2:Point;
+		numCells:number;
+		cells:any[];
 		
 		//debugging
-		private dr:Rectangle;
+		private _rec:Rectangle;
 		
 		/**
-		 * Initializes a two-dimensional array to match a given cell size.
-		 * @param s The size of a grid cell in pixels.
+		 * 
 		 */
-		public function Grid(s:number) {
-			cellSize = s;
-			sizeMulti = 1 / s;
-			flxpRef = new Point();
-			v1 = new Point();
-			v2 = new Point();
+		constructor(widthInCells:number, heightInCells:number) {
+			this.width = widthInCells;
+			this.height = heightInCells;
 			
-			dr = new Rectangle();
-			dr.width = dr.height = cellSize;
+			this.cellWidth = Math.floor(Kai.width / widthInCells);
+			this.cellHeight = Math.floor(Kai.height / widthInCells);
 			
-			hitRect = new Rectangle();
-			width = (G.lvlSize * sizeMulti)+1;
-			height = (G.lvlSize * sizeMulti)+1;
-			size = width * height + 1;
-			console.log('grid w: '+width+' h: '+height);
-			cells = new Vector.<GridCell>(size, true);
+			_sizeMulti = 1 / this.cellSize;
 			
-			var i:number = 0;
-			var cx:number = 0;
-			var cy:number = 0;
-			var cell:GridCell;
+			// this._rec = new Rectangle();
+			// this._rec.width = this.cellWidth;
+			// this._rec.height = this.cellHeight;
 			
-			for (i; i < size; ++i) {
-				cell = new GridCell();
-				cell.x = cx;
-				cell.y = cy;
-				cells[i] = cell;
+			this.numCells = this.width * this.height + 1;
+			
+			this.cells = [];
+			
+			var i:number, j:number, cx:number = 0, cy:number = 0,
+				cell:any;
+			
+			for (i = 0; i < this.width; ++i) {
+				this.cells[i] = [];
 				
-				cx++;
-				if (cx == width) {
-					cx = 0;
-					cy++;
+				for (j = 0; j < this.height; ++j) {
+					this.cells[i][j] = []; // TODO: linked list from https://github.com/playcraft/gamecore.js
+					
 				}
 			}
-			G.grid = this;
+			
+			Kai.grid = this;
+			console.log('[Grid] '+this.cellWidth+'x'+this.cellHeight);
 		}
 		
 		/**
-		 * Insert an entity into the grid and check for collisions
-		 * with whatever is already in those cells.
-		 * @param x   The X position, in pixels.
-		 * @param y   The Y position, in pixels.
-		 * @param obj The object to be inserted/checked.
+		 * Insert an entity into the grid and check for collisions with whatever is already in those cells.
 		 */
-		public function add(X:number, Y:number, obj:Image):void {
+		public function add(obj:IEntity, pos:Vec2):void {
 			var gr:Rectangle = obj.sprRect;
 			var x:number = (gr.x - G.scroll.x) >> 0;
 			var y:number = (gr.y - G.scroll.y) >> 0;
