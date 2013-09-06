@@ -115,7 +115,7 @@
 			"file": "scripts/Main.js",
 			"settings":
 			{
-				"buffer_size": 937,
+				"buffer_size": 955,
 				"line_ending": "Unix"
 			}
 		},
@@ -128,10 +128,10 @@
 			}
 		},
 		{
-			"file": "scripts/math/Vec2.js",
+			"file": "scripts/Grid.js",
 			"settings":
 			{
-				"buffer_size": 5447,
+				"buffer_size": 3855,
 				"line_ending": "Windows"
 			}
 		}
@@ -160,9 +160,16 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Von/Desktop/cando.txt",
+		"/B/c2 Experiments/FlowField/scripts/entities/Thing.js",
+		"/B/c2 Experiments/FlowField/scripts/components/BoundingCircle.js",
+		"/B/c2 Experiments/FlowField/scripts/math/Vec2.js",
+		"/B/c2 Experiments/FlowField/scripts/components/input/Keyboard.ts",
+		"/B/c2 Experiments/FlowField/scripts/components/input/Mouse.ts",
+		"/B/c2 Experiments/FlowField/scripts/components/SteeringAI.js",
 		"/B/c2 Experiments/FlowField/scripts/entities/Nothing.js",
 		"/B/c2 Experiments/FlowField/index.html",
+		"/B/c2 Experiments/FlowField/scripts/entities/Boid.js",
+		"/C/Users/Von/Desktop/cando.txt",
 		"/B/c2 Experiments/FlowField/scripts/lib/Signal.js",
 		"/B/c2 Experiments/FlowField/scripts/lib/SignalBinding.js",
 		"/B/c2 Experiments/FlowField/scripts/lib/SignalBinding.ts",
@@ -280,14 +287,7 @@
 		"/B/git/von-physics/TODO.md",
 		"/B/c2 Games/SamuraiCode/README.md",
 		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/B/c2 Games/README.md",
-		"/B/git/von-physics/javascript/AABB3D.js",
-		"/B/git/von-physics/javascript/BaseObject.js",
-		"/B/git/von-physics/javascript/engine/BaseObject.js",
-		"/B/git/von-physics/javascript/engine/Engine.js",
-		"/B/git/von-physics/javascript/MathUtil.js",
-		"/B/git/von-physics/javascript/aabb_vs_balls.html",
-		"/B/git/von-physics/README.md"
+		"/B/c2 Games/README.md"
 	],
 	"find":
 	{
@@ -305,6 +305,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			":number",
+			":Vec2",
+			":number",
 			"Collider2",
 			"public ",
 			"bool",
@@ -359,6 +362,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
 			"BoundingBox2",
 			"",
 			"boolean",
@@ -402,13 +406,13 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -416,15 +420,15 @@
 					"file": "scripts/Main.js",
 					"settings":
 					{
-						"buffer_size": 937,
+						"buffer_size": 955,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								57,
-								57
+								25,
+								25
 							]
 						],
 						"settings":
@@ -467,18 +471,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "scripts/math/Vec2.js",
+					"file": "scripts/Grid.js",
 					"settings":
 					{
-						"buffer_size": 5447,
+						"buffer_size": 3855,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4285,
-								4285
+								0,
+								0
 							]
 						],
 						"settings":

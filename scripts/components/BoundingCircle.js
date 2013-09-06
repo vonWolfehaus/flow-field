@@ -1,43 +1,34 @@
-/// <reference path="../lib/Vec2.ts" />
-/// <reference path="../lib/Signal.ts" />
-/// <reference path="Velocity2.ts" />
-/// <reference path="Position2.ts" />
-
-module von {
+define(function() {
 	
 	// var _result:Manifold;
 	
-	export class BoundingCircle {
-		position:Position2; // should be set to reference an Entity's component
-		velocity:Velocity2;
+	function BoundingCircle(radius) {
+		this.position = null; // should be set to reference an Entity's component
+		this.velocity = null;
 		
-		center:Vec2 = new Vec2();
+		this.center = new Vec2();
+		this.radius = typeof radius === 'undefined' ? 0 : radius;
 		
-		mass:number = 1;
-		invmass:number = 0;
-		bounce:number = 0;
-		radius:number = 0;
+		this.mass = 1;
+		this.invmass = 0;
+		this.bounce = 0;
 		
-		// hull:HullType = HullType.Circle;
-		
-		collisionSignal:Signal = new Signal();
-		
-		constructor(radius:number) {
-			this.radius = radius;
-		}
-		
-		setMass(newMass:number) {
-			this.mass = newMass;
-			if (newMass <= 0) {
-				this.invmass = 0;
-			} else {
-				this.invmass = 1/newMass;
-			}
-		}
-		
-		update() {
-			this.center.x = this.position.x + this.radius;
-			this.center.y = this.position.y + this.radius;
-		}
+		this.collisionSignal = new Signal();
 	}
-}
+		
+	BoundingCircle.prototype.setMass = function(newMass) {
+		this.mass = newMass;
+		if (newMass <= 0) {
+			this.invmass = 0;
+		} else {
+			this.invmass = 1/newMass;
+		}
+	};
+	
+	BoundingCircle.prototype.update = function() {
+		this.center.x = this.position.x + this.radius;
+		this.center.y = this.position.y + this.radius;
+	};
+	
+	return BoundingCircle;
+});
