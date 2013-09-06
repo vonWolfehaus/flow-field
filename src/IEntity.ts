@@ -1,3 +1,0 @@
-interface IEntity {
-	update:() => void;
-}

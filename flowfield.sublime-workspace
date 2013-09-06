@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"draw",
+				"drawingColor"
+			],
+			[
+				"cel",
+				"cell"
+			],
+			[
+				"posi",
+				"position"
+			],
+			[
+				"cell",
+				"cellSize"
+			],
+			[
+				"wid",
+				"widthInCells"
+			],
+			[
+				"in",
+				"innerHeight"
+			],
+			[
+				"Ve",
+				"Velocity2"
+			],
+			[
 				"mul",
 				"multiplyScalar"
 			],
@@ -48,10 +76,6 @@
 				"Vector"
 			],
 			[
-				"in",
-				"invmass"
-			],
-			[
 				"tra",
 				"trackRect"
 			],
@@ -88,58 +112,26 @@
 	"buffers":
 	[
 		{
-			"file": "src/Main.ts",
+			"file": "scripts/Main.js",
 			"settings":
 			{
-				"buffer_size": 903,
+				"buffer_size": 937,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Kai.ts",
+			"file": "scripts/Kai.js",
 			"settings":
 			{
-				"buffer_size": 227,
+				"buffer_size": 225,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/entities/Boid.ts",
+			"file": "scripts/math/Vec2.js",
 			"settings":
 			{
-				"buffer_size": 2419,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/components/SteeringAI.ts",
-			"settings":
-			{
-				"buffer_size": 1271,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/components/behaviors/Wander.ts",
-			"settings":
-			{
-				"buffer_size": 1665,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/B/git/von-physics/javascript/balls_vector.html",
-			"settings":
-			{
-				"buffer_size": 4429,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/lib/Vec2.ts",
-			"settings":
-			{
-				"buffer_size": 4530,
+				"buffer_size": 5447,
 				"line_ending": "Windows"
 			}
 		}
@@ -168,10 +160,39 @@
 	},
 	"file_history":
 	[
-		"/B/c2 Experiments/FlowField/bin/app.js",
-		"/B/c2 Experiments/FlowField/src/lib/Vec2.ts",
-		"/B/c2 Experiments/FlowField/src/components/Collider2.ts",
+		"/C/Users/Von/Desktop/cando.txt",
+		"/B/c2 Experiments/FlowField/scripts/entities/Nothing.js",
 		"/B/c2 Experiments/FlowField/index.html",
+		"/B/c2 Experiments/FlowField/scripts/lib/Signal.js",
+		"/B/c2 Experiments/FlowField/scripts/lib/SignalBinding.js",
+		"/B/c2 Experiments/FlowField/scripts/lib/SignalBinding.ts",
+		"/B/c2 Experiments/FlowField/scripts/lib/Signal.ts",
+		"/B/c2 Experiments/FlowField/scripts/Grid.js",
+		"/B/c2 Experiments/FlowField/flowfield.sublime-project",
+		"/B/c2 Experiments/FlowField/src/Kai.js",
+		"/B/c2 Experiments/FlowField/src/Main.js",
+		"/B/c2 Experiments/FlowField/bootstrap.js",
+		"/B/c2 Experiments/FlowField/typescript/index.html",
+		"/B/c2 Experiments/FlowField/bin/app.js",
+		"/B/c2 Experiments/FlowField/src/Main.ts",
+		"/B/c2 Experiments/FlowField/src/Kai.ts",
+		"/B/c2 Experiments/FlowField/src/entities/Boid.ts",
+		"/B/c2 Experiments/FlowField/src/components/BoundingCircle.ts",
+		"/B/git/von-physics/javascript/balls_vector.html",
+		"/B/c2 Experiments/FlowField/src/lib/Vec2.ts",
+		"/B/c2 Experiments/FlowField/src/Grid.ts",
+		"/B/git/vvarlock-purgatory/Component.js",
+		"/B/git/vvarlock-purgatory/Display.js",
+		"/B/git/vvarlock-purgatory/Graphics.js",
+		"/B/git/vvarlock-purgatory/GenDocs",
+		"/B/c2 Web/New Text Document.txt",
+		"/B/c2 Experiments/FlowField/src/components/SteeringAI.ts",
+		"/B/c2 Experiments/FlowField/src/components/behaviors/Wander.ts",
+		"/B/c2 Experiments/FlowField/src/_Grid.ts",
+		"/B/c2 Experiments/FlowField/src/Grid.as",
+		"/B/c2 Experiments/FlowField/src/IEntity.ts",
+		"/B/c2 Experiments/FlowField/src/Kai - Copy.ts",
+		"/B/c2 Experiments/FlowField/src/components/Collider2.ts",
 		"/B/c2 Experiments/FlowField/src/components/behaviors/IBehavior.ts",
 		"/B/External Libraries/SteeringBehaviorsWanderSourceFiles/v1 - wander/src/Game.as",
 		"/B/External Libraries/SteeringBehaviorsWanderSourceFiles/v1 - wander/src/Main.as",
@@ -181,14 +202,11 @@
 		"/B/c2 Experiments/FlowField/src/lib/SignalBinding.ts",
 		"/B/c2 Experiments/FlowField/src/components/Health.ts",
 		"/B/c2 Experiments/FlowField/src/lib/Signal.ts",
-		"/B/git/von-physics/javascript/balls_vector.html",
 		"/B/c2 Experiments/FlowField/src/Boid.ts",
 		"/B/c2 Experiments/FlowField/src/Entity.ts",
-		"/B/c2 Experiments/FlowField/src/components/SteeringAI.ts",
 		"/B/c2 Experiments/FlowField/src/components/Position2.ts",
 		"/B/c2 Experiments/FlowField/src/LocalState.ts",
 		"/B/c2 Experiments/FlowField/src/lib/Vec2js.js",
-		"/B/c2 Experiments/FlowField/src/components/behaviors/Wander.ts",
 		"/B/c2 Experiments/FlowField/src/components/input/IInput.ts",
 		"/B/c2 Experiments/FlowField/src/components/Physic2.ts",
 		"/B/git/von-physics/javascript/AABB.js",
@@ -201,10 +219,6 @@
 		"/B/Images/New Text Document.txt",
 		"/B/c2 Experiments/FlowField/lib/Vec2.js",
 		"/B/git/von-physics/javascript/Vector2D.js",
-		"/B/c2 Experiments/FlowField/src/Kai.ts",
-		"/B/c2 Experiments/FlowField/flowfield.sublime-project",
-		"/C/Users/Von/Desktop/cando.txt",
-		"/B/c2 Web/New Text Document.txt",
 		"/B/c2 Experiments/playtime.sublime-project",
 		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
 		"/B/c2 Experiments/FlowField/def/require.d.ts",
@@ -273,29 +287,7 @@
 		"/B/git/von-physics/javascript/engine/Engine.js",
 		"/B/git/von-physics/javascript/MathUtil.js",
 		"/B/git/von-physics/javascript/aabb_vs_balls.html",
-		"/B/git/von-physics/README.md",
-		"/B/git/von-physics/javascript/geom/Circle.js",
-		"/B/c2 Web/Tests/Collision/SATjs/README.md",
-		"/B/c2 Web/Tests/Collision/SATjs/impulse.html",
-		"/B/git/von-physics/javascript/balls_trig.html",
-		"/B/c2 Web/Tests/Collision/SATjs/AABBvsAABB.js",
-		"/B/c2 Web/Tests/Collision/ball_physics.htm",
-		"/B/c2 Web/Tests/Collision/SATjs/min.html",
-		"/B/c2 Web/Tests/Collision/SATjs/impulse_simple.html",
-		"/B/git/jsutilities/README.md",
-		"/B/git/von-physics/javascript/Manifold.js",
-		"/B/c2 Web/Tests/Collision/SATjs/AABB.js",
-		"/B/c2 Web/Tests/Collision/SATjs/impulse_22.html",
-		"/B/c2 Code/JavaScript/impulse.js",
-		"/B/c2 Web/Tests/Collision/SATjs/MathUtil.js",
-		"/B/c2 Web/Tests/Collision/SATjs/Manifold.js",
-		"/B/git/microphysics.js/codeflow/physics.js",
-		"/B/git/microphysics.js/simple-demo/index.html",
-		"/B/git/microphysics.js/simple-demo/index.js",
-		"/B/c2 Web/Tests/Collision/SATjs/Vector2D.js",
-		"/B/git/microphysics.js/THREEx.microphysics.js",
-		"/B/c2 Web/Tests/Collision/SATjs/Circle.js",
-		"/B/c2 Web/Tests/Collision/SATjs/Rectangle.js"
+		"/B/git/von-physics/README.md"
 	],
 	"find":
 	{
@@ -313,6 +305,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"Collider2",
 			"public ",
 			"bool",
 			"?:",
@@ -366,6 +359,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"BoundingBox2",
 			"",
 			"boolean",
 			":",
@@ -414,28 +408,28 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/Main.ts",
+					"file": "scripts/Main.js",
 					"settings":
 					{
-						"buffer_size": 903,
+						"buffer_size": 937,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								698,
-								698
+								57,
+								57
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/TypeScript/typescript.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -446,117 +440,10 @@
 				},
 				{
 					"buffer": 1,
-					"file": "src/Kai.ts",
+					"file": "scripts/Kai.js",
 					"settings":
 					{
-						"buffer_size": 227,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								32,
-								32
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/TypeScript/typescript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/entities/Boid.ts",
-					"settings":
-					{
-						"buffer_size": 2419,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1968,
-								1968
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/TypeScript/typescript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 126.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/components/SteeringAI.ts",
-					"settings":
-					{
-						"buffer_size": 1271,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								405,
-								405
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/TypeScript/typescript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/components/behaviors/Wander.ts",
-					"settings":
-					{
-						"buffer_size": 1665,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								856,
-								856
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/TypeScript/typescript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 42.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/B/git/von-physics/javascript/balls_vector.html",
-					"settings":
-					{
-						"buffer_size": 4429,
+						"buffer_size": 225,
 						"regions":
 						{
 						},
@@ -569,7 +456,7 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -579,24 +466,24 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "src/lib/Vec2.ts",
+					"buffer": 2,
+					"file": "scripts/math/Vec2.js",
 					"settings":
 					{
-						"buffer_size": 4530,
+						"buffer_size": 5447,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								976,
-								976
+								4285,
+								4285
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/TypeScript/typescript.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -668,6 +555,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 170.0,
 	"status_bar_visible": true
 }

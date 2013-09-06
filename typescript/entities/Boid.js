@@ -3,7 +3,7 @@
 /// <reference path="../IEntity.ts" />
 /// <reference path="../components/Position2.ts" />
 /// <reference path="../components/Velocity2.ts" />
-/// <reference path="../components/Collider2.ts" />
+/// <reference path="../components/BoundingBox2.ts" />
 /// <reference path="../components/LocalState.ts" />
 
 /// <reference path="../components/SteeringAI.ts" />
@@ -22,7 +22,7 @@ module von {
 		sprite:PIXI.Sprite;
 		state:LocalState = new LocalState(); // component that hooks into the broadphase grid
 		
-		// collider:Collider2 = new Collider2();
+		// collider:BoundingBox2 = new BoundingBox2();
 		steering:SteeringAI = new SteeringAI();
 		
 		constructor(x:number = 0, y:number = 0) {
@@ -48,7 +48,7 @@ module von {
 			// but units always have various states, each state having different steering priorities...
 			// so a state machine that simply reconfigures priority values per state?
 			// there will have to be a different AI class to handle the states because that's too game-specific
-			this.steering.add(new Wander());
+			// this.steering.add(new Wander());
 			
 			this.steering.configure({
 				maxSpeed: _speed
