@@ -1,4 +1,4 @@
-define(['Kai', 'entities/Thing'], function(Kai, Thing) {
+define(['Kai', 'entities/Thing', 'entities/Nothing'], function(Kai, Thing, Nothing) {
 	
 	var allTheThings = [];
 	// var timer = 30;
@@ -40,6 +40,13 @@ define(['Kai', 'entities/Thing'], function(Kai, Thing) {
 		}
 		
 		update();
+		
+		/*var not1 = new Nothing();
+		var not2 = new Nothing();
+		var not3 = new Nothing();
+		not1.saySomething();
+		not2.saySomething();
+		not3.saySomething();*/
 		
 		console.log('[Main] Running');
 	}
