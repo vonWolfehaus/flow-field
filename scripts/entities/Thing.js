@@ -4,30 +4,34 @@ return function Thing(posx, posy) {
 	if (typeof posx === 'undefined') posx = 0;
 	if (typeof posy === 'undefined') posy = 0;
 	
-	var _speed = Math.random()*15-7;
+	var _self = this,
+		_speed = Math.random() * 5 + 5;
 	
-	this.position = new Vec2(posx, posy);
-	
-	this.velocity = new Vec2(Math.random()*_speed-_speed*0.5, Math.random()*_speed-_speed*0.5);
-	
-	// this.health:Health = new Health();
-	
-	// this.state = new LocalState(); // component that hooks into the broadphase grid
-	
-	this.collider = new BoundingCircle();
-	
-	var texture = PIXI.Texture.fromImage('img/entity.png');
-	this.sprite = new PIXI.Sprite(texture);
-	// center the this sprite's anchor point (as opposed to pivot which is relative position to parent)
-	this.sprite.anchor.x = 0.5;
-	this.sprite.anchor.y = 0.5;
-	
-	Kai.stage.addChild(this.sprite);
-	
-	// link references
-	this.sprite.position = this.position;
-	// this.state.position = this.position;
-	this.collider.position = this.position;
+	init();
+	function init() {
+		_self.position = new Vec2(posx, posy);
+		
+		_self.velocity = new Vec2(Math.random()*_speed-_speed*0.5, Math.random()*_speed-_speed*0.5);
+		
+		// _self.health:Health = new Health();
+		
+		// _self.state = new LocalState(); // component that hooks into the grid
+		
+		_self.collider = new BoundingCircle();
+		
+		var texture = PIXI.Texture.fromImage('img/entity.png');
+		_self.sprite = new PIXI.Sprite(texture);
+		// center the _self sprite's anchor point (as opposed to pivot which is relative position to parent)
+		_self.sprite.anchor.x = 0.5;
+		_self.sprite.anchor.y = 0.5;
+		
+		Kai.stage.addChild(_self.sprite);
+		
+		// link references
+		_self.sprite.position = _self.position;
+		// _self.state.position = _self.position;
+		_self.collider.position = _self.position;
+	}
 	
 	this.update = function() {
 		// var steerForce = this.state.update(this.position);
@@ -46,6 +50,7 @@ return function Thing(posx, posy) {
 		if (this.position.y > window.innerHeight) this.position.y -= window.innerHeight;
 		if (this.position.y < 0) this.position.y += window.innerHeight;
 	};
+	
 	
 } // class
 

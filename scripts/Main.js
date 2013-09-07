@@ -1,29 +1,20 @@
-define(['Kai', 'entities/Thing', 'entities/Nothing'], function(Kai, Thing, Nothing) {
-	
+define(['Kai', 'CollisionGrid', 'FlowGrid', 'entities/Thing', 'entities/Nothing'], function(Kai, CollisionGrid, FlowGrid, Thing, Nothing) {
+
+return function Main(debugCanvas) {
+	var grid = new CollisionGrid(200);
+	var field = new FlowGrid(50, window.innerWidth, window.innerHeight);
 	var allTheThings = [];
 	// var timer = 30;
 	
-	function update() {
-		var i;
-		
-		Kai.debugCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-		
-		for (i = 0; i < allTheThings.length; i++) {
-			allTheThings[i].update();
-		}
-		
-		Kai.renderer.render(Kai.stage);
-		
-		// if (timer-- > 0) {
-			requestAnimFrame(update);
-		// }
-	}
-	
-	function Main(debugCanvas) {
+	init();
+	function init() {
 		Kai.renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
 		document.body.insertBefore(Kai.renderer.view, debugCanvas);
 		
 		Kai.stage = new PIXI.Stage(0x151515);
+		
+		debugCanvas.width = window.innerWidth;
+		debugCanvas.height = window.innerHeight;
 		Kai.debugCtx = debugCanvas.getContext('2d');
 		
 		var i, x = 0, y = 0,
@@ -39,6 +30,7 @@ define(['Kai', 'entities/Thing', 'entities/Nothing'], function(Kai, Thing, Nothi
 			}
 		}
 		
+		
 		update();
 		
 		/*var not1 = new Nothing();
@@ -51,5 +43,24 @@ define(['Kai', 'entities/Thing', 'entities/Nothing'], function(Kai, Thing, Nothi
 		console.log('[Main] Running');
 	}
 	
-	return Main;
+	function update() {
+		var i;
+		
+		for (i = 0; i < allTheThings.length; i++) {
+			allTheThings[i].update();
+		}
+		
+		Kai.renderer.render(Kai.stage);
+		
+		Kai.debugCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+		grid.draw(Kai.debugCtx);
+		field.draw(Kai.debugCtx);
+		
+		
+		// if (timer--) {
+			requestAnimFrame(update);
+		// }
+	}
+	
+} // class
 });
