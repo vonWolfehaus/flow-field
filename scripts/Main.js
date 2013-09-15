@@ -1,10 +1,71 @@
-define(['Kai', 'CollisionGrid', 'FlowGrid', 'entities/Thing', 'entities/Nothing'], function(Kai, CollisionGrid, FlowGrid, Thing, Nothing) {
+define(['engine/Kai', 'engine/CollisionGrid', 'engine/FlowGrid', 'entities/Thing', 'entities/Nothing'], function(Kai, CollisionGrid, FlowGrid, Thing, Nothing) {
 
 return function Main(debugCanvas) {
 	var grid = new CollisionGrid(200);
-	var field = new FlowGrid(50, window.innerWidth, window.innerHeight);
+	var flow = new FlowGrid(50, window.innerWidth, window.innerHeight);
 	var allTheThings = [];
-	// var timer = 30;
+	var blocks = [];
+	// var timer = 30; // DEBUG
+	
+	
+	function update() {
+		var i;
+		
+		for (i = 0; i < allTheThings.length; i++) {
+			allTheThings[i].update();
+		}
+		
+		Kai.renderer.render(Kai.stage);
+		
+		for (i = 0; i < blocks.length; i++) {
+			Kai.debugCtx.fillStyle = blocks[i].color;
+			Kai.debugCtx.fillRect(blocks[i].x, blocks[i].y, flow.cellPixelSize, flow.cellPixelSize);
+		}
+		
+		// if (timer--) {
+			requestAnimFrame(update);
+		// }
+	}
+	
+	function onKeyDown(key) {
+		if (key === 32) {
+			flow.build();
+		}
+	}
+	
+	function onMouseDown(pos) {
+		var i, on,
+			x = ~~(pos.x/flow.cellPixelSize) * flow.cellPixelSize,
+			y = ~~(pos.y/flow.cellPixelSize) * flow.cellPixelSize;
+		
+		Kai.debugCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+		if (Kai.mouse.shift) {
+			on = flow.setBlockAt(pos.x, pos.y);
+			if (on) {
+				flow.build();
+				blocks.push({x: x, y: y, color: '#fff'});
+			} else {
+				for (i = 0; i < blocks.length; i++) {
+					if (blocks[i].x === x && blocks[i].y === y) {
+						blocks.splice(i, 1);
+						break;
+					}
+				}
+			}
+			
+		} else {
+			on = flow.setGoal(pos.x, pos.y);
+			if (on) {
+				flow.build();
+				blocks[0] = {x: x, y: y, color: '#5F158C'};
+			}
+		}
+		
+		flow.draw(Kai.debugCtx);
+		grid.draw(Kai.debugCtx);
+	}
+	
 	
 	init();
 	function init() {
@@ -23,13 +84,20 @@ return function Main(debugCanvas) {
 		
 		for (i = 0; i < amount; i++) {
 			allTheThings.push(new Thing(x*size+100, y*size+50));
-			x++;
-			if (x === g) {
+			if (++x === g) {
 				x = 0;
 				y++;
 			}
 		}
 		
+		blocks[0] = {x: 0, y: 0, color: '#5F158C'};
+		
+		flow.draw(Kai.debugCtx);
+		
+		grid.draw(Kai.debugCtx);
+		
+		Kai.mouse.onDown.add(onMouseDown);
+		Kai.keys.onDown.add(onKeyDown);
 		
 		update();
 		
@@ -41,25 +109,6 @@ return function Main(debugCanvas) {
 		not3.saySomething();*/
 		
 		console.log('[Main] Running');
-	}
-	
-	function update() {
-		var i;
-		
-		for (i = 0; i < allTheThings.length; i++) {
-			allTheThings[i].update();
-		}
-		
-		Kai.renderer.render(Kai.stage);
-		
-		Kai.debugCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-		grid.draw(Kai.debugCtx);
-		field.draw(Kai.debugCtx);
-		
-		
-		// if (timer--) {
-			requestAnimFrame(update);
-		// }
 	}
 	
 } // class

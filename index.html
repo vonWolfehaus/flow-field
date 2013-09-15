@@ -32,7 +32,8 @@
 		baseUrl: "scripts",
 	});
 	
-	require(['Main', 'scripts/math/Vec2.js', 'scripts/lib/pixi.js', 'scripts/lib/Signal.js'], function(Main) {
+	require(['Main', 'scripts/math/Vec2.js', 'scripts/lib/pixi.js', 'scripts/lib/Signal.js',
+	        'scripts/lib/linkedlist.js'], function(Main) {
 		var game = new Main(document.getElementById('debug'));
 	});
 </script>

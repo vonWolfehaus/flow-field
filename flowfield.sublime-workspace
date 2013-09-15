@@ -4,12 +4,52 @@
 		"selected_items":
 		[
 			[
-				"draw",
-				"drawingColor"
+				"pas",
+				"passable"
+			],
+			[
+				"he",
+				"heightInCells"
+			],
+			[
+				"reg",
+				"regenHeatmap"
+			],
+			[
+				"de",
+				"debugCtx"
+			],
+			[
+				"rege",
+				"regenField"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"re",
+				"regenHeatmap"
+			],
+			[
+				"ce",
+				"cellPixelSize"
+			],
+			[
+				"inn",
+				"innerHeight"
+			],
+			[
+				"in",
+				"innerWidth"
 			],
 			[
 				"cel",
-				"cell"
+				"cellSize"
+			],
+			[
+				"draw",
+				"drawingColor"
 			],
 			[
 				"posi",
@@ -22,10 +62,6 @@
 			[
 				"wid",
 				"widthInCells"
-			],
-			[
-				"in",
-				"innerHeight"
 			],
 			[
 				"Ve",
@@ -88,20 +124,12 @@
 				"mouseX"
 			],
 			[
-				"re",
-				"rects"
-			],
-			[
 				"num",
 				"numRects"
 			],
 			[
 				"new",
 				"newMass"
-			],
-			[
-				"fun",
-				"function"
 			],
 			[
 				"back",
@@ -115,23 +143,47 @@
 			"file": "scripts/Main.js",
 			"settings":
 			{
-				"buffer_size": 955,
+				"buffer_size": 2557,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "scripts/entities/Thing.js",
+			"settings":
+			{
+				"buffer_size": 1828,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "scripts/components/LocalState.js",
+			"settings":
+			{
+				"buffer_size": 215,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "scripts/Kai.js",
+			"file": "scripts/engine/FlowGrid.js",
 			"settings":
 			{
-				"buffer_size": 225,
+				"buffer_size": 6503,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "scripts/lib/linkedlist.js",
+			"settings":
+			{
+				"buffer_size": 7838,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "scripts/Grid.js",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 3855,
+				"buffer_size": 745,
 				"line_ending": "Windows"
 			}
 		}
@@ -160,21 +212,45 @@
 	},
 	"file_history":
 	[
+		"/B/c2 Experiments/FlowField/scripts/engine/FlowGridNode.js",
 		"/B/c2 Experiments/FlowField/scripts/entities/Thing.js",
-		"/B/c2 Experiments/FlowField/scripts/components/BoundingCircle.js",
 		"/B/c2 Experiments/FlowField/scripts/math/Vec2.js",
+		"/B/c2 Experiments/FlowField/scripts/lib/hashtable.js",
+		"/C/Users/Von/Desktop/cando.txt",
+		"/B/c2 Experiments/FlowField/scripts/entities/Nothing.js",
+		"/B/c2 Experiments/FlowField/scripts/entities/Boid.js",
+		"/B/c2 Experiments/FlowField/scripts/engine/Kai.js",
+		"/B/c2 Experiments/FlowField/scripts/math/Point3.js",
+		"/B/c2 Experiments/FlowField/scripts/components/Health.js",
+		"/B/c2 Experiments/FlowField/scripts/components/LocalState.js",
+		"/B/c2 Experiments/FlowField/scripts/components/BoundingCircle.js",
+		"/B/c2 Experiments/FlowField/scripts/components/BoundingBox2.js",
+		"/B/c2 Experiments/FlowField/scripts/engine/CollisionGrid.js",
+		"/B/c2 Experiments/FlowField/scripts/engine/Grid.as",
+		"/B/c2 Experiments/FlowField/index.html",
+		"/B/c2 Experiments/FlowField/scripts/components/Position2.js",
+		"/B/c2 Experiments/FlowField/scripts/components/Velocity2.js",
+		"/B/c2 Experiments/FlowField/scripts/components/input/KeyboardController.js",
+		"/B/c2 Experiments/FlowField/scripts/components/input/MouseController.js",
+		"/B/c2 Experiments/FlowField/scripts/FlowGrid.js",
+		"/B/c2 Experiments/FlowField/scripts/math/Point.js",
+		"/B/c2 Experiments/FlowField/scripts/Kai.js",
+		"/B/c2 Experiments/FlowField/scripts/CollisionGrid.js",
+		"/B/c2 Experiments/FlowField/examples/wave_front.c",
+		"/B/c2 Experiments/FlowField/scripts/components/input/Mouse.js",
+		"/B/c2 Experiments/FlowField/examples/WavefrontPlanner.py",
+		"/B/c2 Experiments/FlowField/examples/ProximityManager_1.7.as",
+		"/B/c2 Experiments/FlowField/examples/wave_front.lst",
+		"/B/c2 Experiments/FlowField/examples/wave_front.o",
+		"/B/c2 Experiments/FlowField/scripts/Grid.js",
+		"/E/cork/CollisionGrid.ts",
 		"/B/c2 Experiments/FlowField/scripts/components/input/Keyboard.ts",
 		"/B/c2 Experiments/FlowField/scripts/components/input/Mouse.ts",
 		"/B/c2 Experiments/FlowField/scripts/components/SteeringAI.js",
-		"/B/c2 Experiments/FlowField/scripts/entities/Nothing.js",
-		"/B/c2 Experiments/FlowField/index.html",
-		"/B/c2 Experiments/FlowField/scripts/entities/Boid.js",
-		"/C/Users/Von/Desktop/cando.txt",
 		"/B/c2 Experiments/FlowField/scripts/lib/Signal.js",
 		"/B/c2 Experiments/FlowField/scripts/lib/SignalBinding.js",
 		"/B/c2 Experiments/FlowField/scripts/lib/SignalBinding.ts",
 		"/B/c2 Experiments/FlowField/scripts/lib/Signal.ts",
-		"/B/c2 Experiments/FlowField/scripts/Grid.js",
 		"/B/c2 Experiments/FlowField/flowfield.sublime-project",
 		"/B/c2 Experiments/FlowField/src/Kai.js",
 		"/B/c2 Experiments/FlowField/src/Main.js",
@@ -263,31 +339,7 @@
 		"/B/c2 Games/tests/nintendo/mm_enchant/enchant.js-builds-0.7.0/examples/developers/eventViewer/main.js",
 		"/B/c2 Games/tests/nintendo/mm_enchant/enchant.js-builds-0.7.0/examples/expert/action/game.js",
 		"/B/c2 Games/tests/nintendo/mm_enchant/enchant.js-builds-0.7.0/build/plugins/nineleap.enchant.js",
-		"/B/c2 Games/Playtime/README.md",
-		"/B/c2 Games/Playtime/index.html",
-		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/TypeScript/typescript.sublime-build",
-		"/B/c2 Games/Playtime/scripts/Collision.ts",
-		"/B/c2 Games/Playtime/assets/maps/platform-test-1.json",
-		"/B/git/phaser/Tests/tilemap/collision.ts",
-		"/B/git/phaser/Tests/tilemap/collide with tile.ts",
-		"/B/git/phaser/Tests/collision/collide sprites.ts",
-		"/B/git/phaser/Tests/collision/falling balls.ts",
-		"/B/c2 Games/Playtime/scripts/Phaser/Game.ts",
-		"/B/git/phaser/Tests/physics/aabb vs aabb 1.ts",
-		"/B/git/phaser/Tests/index.php",
-		"/B/git/phaser/Tests/phaser.css",
-		"/B/git/phaser/Phaser/physics/PhysicsManager.ts",
-		"/B/git/phaser/Phaser/physics/Body.ts",
-		"/B/c2 Games/Playtime/scripts/Phaser/Phaser.ts",
-		"/B/c2 Games/Playtime/scripts/Phaser/phaser.js",
-		"/B/git/phaser/GruntFile.js",
-		"/B/git/phaser/Plugins/verlet/VerletManager.ts",
-		"/B/c2 Games/Playtime/scripts/Tiled.ts",
-		"/B/c2 Games/Playtime/scripts/phaser.js",
-		"/B/git/von-physics/TODO.md",
-		"/B/c2 Games/SamuraiCode/README.md",
-		"/C/Users/Von/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/B/c2 Games/README.md"
+		"/B/c2 Games/Playtime/README.md"
 	],
 	"find":
 	{
@@ -302,9 +354,33 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": true,
+		"case_sensitive": false,
 		"find_history":
 		[
+			"_openList",
+			"objToNodeMap",
+			"getUniqueId()",
+			"count",
+			"},",
+			":function",
+			"prevLinked",
+			"nextLinked",
+			"y",
+			"x",
+			"nodes",
+			"draw",
+			"field",
+			"heatmap",
+			"mapY",
+			"mapX",
+			"MAP",
+			"baseMinVal",
+			"minVal",
+			"reset_minVal",
+			"cells",
+			"height",
+			"width",
+			"this",
 			":number",
 			":Vec2",
 			":number",
@@ -362,6 +438,26 @@
 		"regex": false,
 		"replace_history":
 		[
+			"uniqueId",
+			"length",
+			"};",
+			" = function",
+			"prev",
+			"next",
+			"gridY",
+			"gridX",
+			"grid",
+			"field",
+			"this.heightInCells",
+			"this.widthInCells",
+			"this.heatmap",
+			"_baseMinVal",
+			"_hmMinVal",
+			"baseMinVal",
+			"field",
+			"heightInCells",
+			"widthInCells",
+			"_self",
 			"",
 			"BoundingBox2",
 			"",
@@ -412,7 +508,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -420,15 +516,15 @@
 					"file": "scripts/Main.js",
 					"settings":
 					{
-						"buffer_size": 955,
+						"buffer_size": 2557,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								25,
-								25
+								1166,
+								1166
 							]
 						],
 						"settings":
@@ -444,18 +540,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "scripts/Kai.js",
+					"file": "scripts/entities/Thing.js",
 					"settings":
 					{
-						"buffer_size": 225,
+						"buffer_size": 1828,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								122,
+								122
 							]
 						],
 						"settings":
@@ -471,23 +567,104 @@
 				},
 				{
 					"buffer": 2,
-					"file": "scripts/Grid.js",
+					"file": "scripts/components/LocalState.js",
 					"settings":
 					{
-						"buffer_size": 3855,
+						"buffer_size": 215,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								128,
+								128
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "scripts/engine/FlowGrid.js",
+					"settings":
+					{
+						"buffer_size": 6503,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4885,
+								4885
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 675.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "scripts/lib/linkedlist.js",
+					"settings":
+					{
+						"buffer_size": 7838,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7838,
+								7838
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3046.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 745,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								638,
+								638
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -558,7 +735,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 170.0,
 	"status_bar_visible": true
 }

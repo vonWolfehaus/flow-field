@@ -8,6 +8,8 @@
 		if (typeof y === 'undefined') y = 0;
 		this.x = x;
 		this.y = y;
+		// something extra for arbitrary data
+		// this.w = null;
 	}
 	
 	/**

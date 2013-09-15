@@ -1,4 +1,4 @@
-define(['Kai', 'components/BoundingCircle'], function(Kai, BoundingCircle) {
+define(['engine/Kai', 'components/BoundingCircle'], function(Kai, BoundingCircle) {
 
 /**
  * 
@@ -16,23 +16,6 @@ return function CollisionGrid(cellSize) {
 	
 	var _self = this,
 		_sizeMulti = 1 / this.cellPixelSize;
-	
-	init();
-	function init() {
-		var i, j;
-		
-		for (i = 0; i < _self.widthInCells; ++i) {
-			_self.cells[i] = [];
-			
-			for (j = 0; j < _self.heightInCells; ++j) {
-				_self.cells[i][j] = []; // TODO: linked list from https://github.com/playcraft/gamecore.js
-				
-			}
-		}
-		
-		Kai.grid = _self;
-		console.log('[CollisionGrid] '+_self.widthInCells+'x'+_self.heightInCells);
-	}
 	
 	
 	this.update = function() {
@@ -128,6 +111,24 @@ return function CollisionGrid(cellSize) {
 			}
 		}
 	};
+	
+	
+	init();
+	function init() {
+		var i, j;
+		
+		for (i = 0; i < _self.widthInCells; ++i) {
+			_self.cells[i] = [];
+			
+			for (j = 0; j < _self.heightInCells; ++j) {
+				_self.cells[i][j] = []; // TODO: linked list from https://github.com/playcraft/gamecore.js
+				
+			}
+		}
+		
+		Kai.grid = _self;
+		console.log('[CollisionGrid] '+_self.widthInCells+'x'+_self.heightInCells);
+	}
 		
 } // class
 });
