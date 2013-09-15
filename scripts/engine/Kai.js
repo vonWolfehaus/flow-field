@@ -6,6 +6,7 @@ define(['components/input/MouseController', 'components/input/KeyboardController
 		stage: null,
 		renderer: null,
 		grid: null,
+		flow: null,
 		
 		debugCtx: null,
 		components: null,

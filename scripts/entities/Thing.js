@@ -13,8 +13,8 @@ return function Thing(posx, posy) {
 	this.update = function() {
 		var steerForce = this.state.update(this.position);
 		
-		// this.velocity.copy(steerForce);
-		// this.velocity.normalize().multiplyScalar(_speed);
+		this.velocity.copy(steerForce).normalize();
+		this.velocity.multiplyScalar(_speed);
 		
 		this.position.add(this.velocity);
 		this.collider.update();
@@ -37,7 +37,7 @@ return function Thing(posx, posy) {
 		
 		// _self.health:Health = new Health();
 		
-		_self.state = new LocalState(); // component that hooks into the grid
+		_self.state = new LocalState(_self.position); // component that hooks into the grid
 		
 		_self.collider = new BoundingCircle();
 		

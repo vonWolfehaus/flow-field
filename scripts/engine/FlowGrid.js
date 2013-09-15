@@ -1,4 +1,4 @@
-define(['engine/FlowGridNode'], function(FlowGridNode) {
+define(['engine/Kai', 'engine/FlowGridNode'], function(Kai, FlowGridNode) {
 
 /**
  * This is a flow grid (or vector grid) which is a combination of a grid that's generated using the
@@ -132,7 +132,7 @@ return function FlowGrid(cellSize, width, height) {
 		// TODO: normalize values
 		
 		// console.log('[FlowGrid.regenHeatmap] Completed in '+i+' iterations:');
-		console.log(this.toString());
+		// console.log(this.toString());
 	};
 	
 	this.draw = function(ctx) {
@@ -209,6 +209,8 @@ return function FlowGrid(cellSize, width, height) {
 				_self.grid[i][j] = new FlowGridNode(i, j);
 			}
 		}
+		
+		Kai.flow = _self;
 		
 		console.log('[FlowGrid] '+_self.widthInCells+'x'+_self.heightInCells);
 	}
