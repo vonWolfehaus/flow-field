@@ -1,5 +1,5 @@
 /**
- * Global state resources.
+ * Global state resources. No idea why I called it 'Kai'.
  */
 define(['components/input/MouseController', 'components/input/KeyboardController'], function(MouseController, KeyboardController) {
 	var g = {
@@ -14,8 +14,11 @@ define(['components/input/MouseController', 'components/input/KeyboardController
 		settings: {
 			drawVectors: true,
 			flocking: true,
-			followVectors: true,
-			collision: true
+			collision: true,
+			clearObstacles: function() {
+				window.Kai.map.clear();
+				window.Kai.flow.clear();
+			}
 		},
 		
 		elapsed: 0,

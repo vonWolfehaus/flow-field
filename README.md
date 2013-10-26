@@ -10,4 +10,4 @@ Sometimes called flow fields, vector fields, wavefront expansion, brushfire, and
 
 This makes pathfinding very large numbers of objects very efficient. However, there are some problems such as local optima. I hoped to solve local optima with flocking--if one entity gets stuck, it will come out of it by following its neighbors out (who did not get stuck).
 
-It didn't work as well as I hoped. I didn't spend enough time placing proper weights on the flocking rules I think. But just using collision resolution resulted in smoother pathing. But that's what experiments are for. Science, bitches.
+It didn't work as well as I hoped. I didn't spend enough time placing proper weights on the flocking rules, but just using collision resolution resulted in smoother pathing. Anyway, that's what experiments are for. Science, bitches.

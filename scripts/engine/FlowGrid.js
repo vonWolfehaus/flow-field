@@ -189,6 +189,18 @@ return function FlowGrid(cellSize, width, height) {
 		return !this.grid[x][y].passable;
 	};
 	
+	this.clear = function() {
+		var i, j, v;
+		for (i = 0; i < this.widthInCells; i++) {
+			for (j = 0; j < this.heightInCells; j++) {
+				v = this.grid[i][j];
+				v.passable = true;
+				v.cost = -1;
+			}
+		}
+		this.build();
+	};
+	
 	this.toString = function() {
 		var str = '', x = 0, y = 0,
 			i, v;

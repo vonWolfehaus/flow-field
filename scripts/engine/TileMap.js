@@ -44,10 +44,10 @@ return function TileMap(tileSize, tilesprite) {
 			_ctx.clearRect(px, py, tileSize, tileSize);
 			
 			// kill the block
-			block = _blockLookup[px+''+py];
-			delete _blockLookup[px+''+py];
+			block = _blockLookup[px+'-'+py];
 			_blockCache.add(block);
 			block.disable();
+			delete _blockLookup[px+'-'+py];
 			
 		} else {
 			this.grid[idx] = 1;
@@ -64,7 +64,7 @@ return function TileMap(tileSize, tilesprite) {
 			}
 			
 			block.enable();
-			_blockLookup[px+''+py] = block;
+			_blockLookup[px+'-'+py] = block;
 		}
 		
 		// console.log(this.toString());
@@ -82,6 +82,22 @@ return function TileMap(tileSize, tilesprite) {
 		return this.grid[idx];
 	};
 	
+	this.clear = function() {
+		for (var id in _blockLookup) {
+			var str = id.split('-'),
+				x = ~~(parseInt(str[0], 10) * _sizeMulti);
+				y = ~~(parseInt(str[1], 10) * _sizeMulti);
+				idx = (x * this.heightInTiles) + y;
+			
+			this.grid[idx] = 0;
+			block = _blockLookup[id];
+			_ctx.clearRect(block.position.x-25, block.position.y-25, tileSize, tileSize);
+			
+			_blockCache.add(block);
+			block.disable();
+			delete _blockLookup[id];
+		}
+	};
 	
 	this.toString = function() {
 		var str = '', x = 0, y = 0,

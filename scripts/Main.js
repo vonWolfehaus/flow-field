@@ -122,8 +122,8 @@ return function Main() {
 		gui.width = 200;
 		gui.add(Kai.settings, 'drawVectors');
 		gui.add(Kai.settings, 'flocking');
-		gui.add(Kai.settings, 'followVectors');
 		gui.add(Kai.settings, 'collision');
+		gui.add(Kai.settings, 'clearObstacles');
 		
 		console.log('[Main] Running');
 		
