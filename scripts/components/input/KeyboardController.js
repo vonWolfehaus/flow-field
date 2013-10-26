@@ -5,7 +5,7 @@ return function KeyboardController() {
 	this.key = -1;
 	
 	this.onDown = new Signal();
-	// this.onUp = new Signal();
+	this.onUp = new Signal();
 	
 	this.down = false;
 	this.shift = false;
@@ -28,7 +28,10 @@ return function KeyboardController() {
 	function onUp(evt) {
 		_self.down = false;
 		_self.key = -1;
-		// _self.onUp.dispatch(_self.position);
+		_self.shift = false;
+		_self.ctrl = false;
+		
+		_self.onUp.dispatch(_self.key);
 	}
 	
 	init();

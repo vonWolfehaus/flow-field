@@ -5,7 +5,7 @@ return function MouseController() {
 	this.position = new Vec2();
 	
 	this.onDown = new Signal();
-	// this.onUp = new Signal();
+	this.onUp = new Signal();
 	
 	this.down = false;
 	this.shift = false;
@@ -13,11 +13,6 @@ return function MouseController() {
 	
 	var _self = this,
 		_downPrev = false;
-	
-	/*this.update = function() {
-		
-		_downPrev = this.down;
-	};*/
 	
 	function onDown(evt) {
 		_self.position.x = evt.pageX;
@@ -34,7 +29,7 @@ return function MouseController() {
 		_self.position.x = evt.pageX;
 		_self.position.y = evt.pageY;
 		_self.down = false;
-		// _self.onUp.dispatch(_self.position);
+		_self.onUp.dispatch(_self.position);
 	}
 	
 	function onMove(evt) {
@@ -51,6 +46,7 @@ return function MouseController() {
 		document.addEventListener('mousedown', onDown, false);
 		document.addEventListener('mouseup', onUp, false);
 		document.addEventListener('mouseout', onOut, false);
+		document.addEventListener('mousemove', onMove, false);
 	}
 	
 } // class

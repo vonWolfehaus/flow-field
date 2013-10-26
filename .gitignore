@@ -1,6 +1,6 @@
-*.sublime-workspace
+*.sublime-*
 
-
+*.psd
 [Bb]in
 [Oo]bj
 sql

@@ -1,26 +1,46 @@
-define(['engine/Kai', 'engine/CollisionGrid', 'engine/FlowGrid', 'entities/Thing', 'entities/Nothing'], function(Kai, CollisionGrid, FlowGrid, Thing, Nothing) {
+define(['engine/Kai', 'engine/ComponentType', 'engine/CollisionGrid', 'engine/FlowGrid', 'entities/Thing', 'engine/TileMap'], function(Kai, ComponentType, CollisionGrid, FlowGrid, Thing, TileMap) {
 
-return function Main(debugCanvas) {
+return function Main() {
+	
+	var gui = new dat.GUI();
 	var grid = new CollisionGrid(200);
+	var map = new TileMap(50, document.getElementById('tilesprite'));
 	var flow = new FlowGrid(50, window.innerWidth, window.innerHeight);
 	var allTheThings = [];
-	var blocks = [];
-	// var timer = 30; // DEBUG
+	var target = null;
+	var paint = 0;
+	// var timer = 120; // DEBUG
 	
+	var dt, last, now;
 	
 	function update() {
-		var i;
+		var i, tile, pos = Kai.mouse.position;
+		
+		now = window.performance.now();
+		dt = now - last;
+		last = now;
+		Kai.elapsed = dt * 0.0001;
+		Kai.debugCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+		
+		if (Kai.keys.shift && Kai.mouse.down) {
+			tile = map.getTile(pos.x, pos.y);
+			
+			if (paint !== tile) {
+				newTile = map.setTile(pos.x, pos.y, paint);
+				flow.setBlockAt(pos.x, pos.y);
+			}
+		}
 		
 		for (i = 0; i < allTheThings.length; i++) {
 			allTheThings[i].update();
 		}
 		
+		if (Kai.settings.collision) grid.update();
+		
 		Kai.renderer.render(Kai.stage);
 		
-		for (i = 0; i < blocks.length; i++) {
-			Kai.debugCtx.fillStyle = blocks[i].color;
-			Kai.debugCtx.fillRect(blocks[i].x, blocks[i].y, flow.cellPixelSize, flow.cellPixelSize);
-		}
+		if (Kai.settings.drawVectors) flow.draw(Kai.debugCtx);
+		// grid.draw(Kai.debugCtx);
 		
 		// if (timer--) {
 			requestAnimFrame(update);
@@ -29,7 +49,10 @@ return function Main(debugCanvas) {
 	
 	function onKeyDown(key) {
 		if (key === 32) {
-			flow.build();
+			// flow.build();
+			// flow.log();
+			// grid.log();
+			// allTheThings[0].flocker.log();
 		}
 	}
 	
@@ -37,46 +60,44 @@ return function Main(debugCanvas) {
 		var i, on,
 			x = ~~(pos.x/flow.cellPixelSize) * flow.cellPixelSize,
 			y = ~~(pos.y/flow.cellPixelSize) * flow.cellPixelSize;
-		
-		Kai.debugCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
 		if (Kai.mouse.shift) {
-			on = flow.setBlockAt(pos.x, pos.y);
-			if (on) {
-				flow.build();
-				blocks.push({x: x, y: y, color: '#fff'});
-			} else {
-				for (i = 0; i < blocks.length; i++) {
-					if (blocks[i].x === x && blocks[i].y === y) {
-						blocks.splice(i, 1);
-						break;
-					}
-				}
-			}
+			paint = !!map.getTile(pos.x, pos.y) ? 0 : 1;
 			
 		} else {
 			on = flow.setGoal(pos.x, pos.y);
 			if (on) {
 				flow.build();
-				blocks[0] = {x: x, y: y, color: '#5F158C'};
+				
+				target.position.x = x;
+				target.position.y = y;
+				target.visible = true;
+				
+				for (i = 0; i < allTheThings.length; i++) {
+					allTheThings[i].vecFieldState.reachedGoal = false;
+				}
 			}
 		}
-		
-		flow.draw(Kai.debugCtx);
-		grid.draw(Kai.debugCtx);
 	}
 	
 	
 	init();
 	function init() {
-		Kai.renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
-		document.body.insertBefore(Kai.renderer.view, debugCanvas);
-		
-		Kai.stage = new PIXI.Stage(0x151515);
-		
+		var debugCanvas = document.getElementById('debug');
 		debugCanvas.width = window.innerWidth;
 		debugCanvas.height = window.innerHeight;
 		Kai.debugCtx = debugCanvas.getContext('2d');
+		
+		Kai.renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight, null, true);
+		document.body.appendChild(Kai.renderer.view);
+		// document.body.insertBefore(Kai.renderer.view, debugCanvas);
+		
+		Kai.stage = new PIXI.Stage();
+		
+		var texture = PIXI.Texture.fromImage('img/target.png');
+		target = new PIXI.Sprite(texture);
+		target.visible = false;
+		Kai.stage.addChild(target);
 		
 		var i, x = 0, y = 0,
 			amount = 20, size = 50,
@@ -90,25 +111,24 @@ return function Main(debugCanvas) {
 			}
 		}
 		
-		blocks[0] = {x: 0, y: 0, color: '#5F158C'};
-		
-		flow.draw(Kai.debugCtx);
-		
-		grid.draw(Kai.debugCtx);
+		var datgui = document.getElementsByClassName('dg')[0];
+		datgui.addEventListener('mousedown', function(evt) {
+			evt.stopPropagation(); // don't let clicks on the gui trigger anything else, it's annoying
+		}, false);
 		
 		Kai.mouse.onDown.add(onMouseDown);
 		Kai.keys.onDown.add(onKeyDown);
 		
-		update();
-		
-		/*var not1 = new Nothing();
-		var not2 = new Nothing();
-		var not3 = new Nothing();
-		not1.saySomething();
-		not2.saySomething();
-		not3.saySomething();*/
+		gui.width = 200;
+		gui.add(Kai.settings, 'drawVectors');
+		gui.add(Kai.settings, 'flocking');
+		gui.add(Kai.settings, 'followVectors');
+		gui.add(Kai.settings, 'collision');
 		
 		console.log('[Main] Running');
+		
+		last = window.performance.now();
+		update();
 	}
 	
 } // class

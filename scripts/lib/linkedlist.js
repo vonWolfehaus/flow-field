@@ -100,7 +100,7 @@ LinkedList = function() {
 			node.prev = null;
 		} else {
 			if (this.last == null) {
-				throw "Hmm, no last in the list -- that shouldn't happen here";
+				throw new Error("Hmm, no last in the list -- that shouldn't happen here");
 			}
 
 			// add this entry to the end of the list
@@ -243,6 +243,7 @@ LinkedList = function() {
 		
 		// make the next on the list first (can be null)
 		this.first = node.next;
+		if (!node.next) this.last = null; // make sure we clear this
 		
 		node.free = true;
 		node.prev = null;
@@ -267,6 +268,7 @@ LinkedList = function() {
 		
 		// this node's previous becomes last
 		this.last = node.prev;
+		if (!node.prev) this.first = null; // make sure we clear this
 		
 		node.free = true;
 		node.prev = null;

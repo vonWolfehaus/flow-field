@@ -32,17 +32,18 @@ return function FlowGrid(cellSize, width, height) {
 	this.grid = [];
 	
 	this.goal = new Vec2();
+	this.goalPixels = new Vec2();
 	
-	var _self = this, _openList = new LinkedList(),
+	var _self = this, _openList = new LinkedList(), _tau = Math.PI*2,
 		_sizeMulti = 1 / this.cellPixelSize;
 	
 	
 	/**
 	 * Coordinates are in world space (pixels).
 	 */
-	this.setGoal = function(endX, endY) {
-		endX = ~~(endX * _sizeMulti);
-		endY = ~~(endY * _sizeMulti);
+	this.setGoal = function(endPixelX, endPixelY) {
+		var endX = ~~(endPixelX * _sizeMulti);
+		var endY = ~~(endPixelY * _sizeMulti);
 		
 		if (endX < 0 || endY < 0 || endX >= this.widthInCells || endY >= this.heightInCells) {
 			throw new Error('[FlowGrid.build] Out of bounds');
@@ -52,13 +53,14 @@ return function FlowGrid(cellSize, width, height) {
 		
 		this.goal.x = endX;
 		this.goal.y = endY;
+		this.goalPixels.reset(endPixelX, endPixelY);
 		
 		return true;
 	};
 	
 	/**
-	 * Runs a breadth-first search on the heatmap. Or it's the wavefront algorithm. Wait, it's both. Wavefront
-	 * simply means it stores how many steps it took to get to each tile along the way. aka brushfire alg.
+	 * Runs a breadth-first search on the heatmap, stores how many steps it took to get to each tile
+	 * along the way. Then calculates the movement vectors.
 	 */
 	this.build = function() {
 		var i, j, current, node, neighbor,
@@ -140,19 +142,23 @@ return function FlowGrid(cellSize, width, height) {
 		ctx.lineWidth = 1;
 		for (i = 0; i < this.widthInCells; i++) {
 			for (j = 0; j < this.heightInCells; j++) {
-				ctx.strokeStyle = 'rgba(0, 120, 0, 0.4)';
+				ctx.strokeStyle = 'rgba(0, 0, 0, 0.4)';
+				ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
 				v = this.grid[i][j];
 				if (!v.passable) continue;
 				
 				vx = (i*this.cellPixelSize)+(this.cellPixelSize*0.5);
 				vy = (j*this.cellPixelSize)+(this.cellPixelSize*0.5);
+				
 				ctx.beginPath();
+				ctx.arc(vx, vy, 3, 0, _tau, false);
+				ctx.fill();
 				ctx.moveTo(vx, vy);
 				ctx.lineTo(vx+(v.x*11), vy+(v.y*11));
 				ctx.stroke();
 				
-				ctx.strokeStyle = 'rgba(120, 0, 0, 0.5)';
-				ctx.strokeRect(i*this.cellPixelSize, j*this.cellPixelSize, this.cellPixelSize, this.cellPixelSize);
+				// ctx.strokeStyle = 'rgba(120, 0, 0, 0.5)';
+				// ctx.strokeRect(i*this.cellPixelSize, j*this.cellPixelSize, this.cellPixelSize, this.cellPixelSize);
 			}
 		}
 	};
@@ -160,12 +166,18 @@ return function FlowGrid(cellSize, width, height) {
 	/**
 	 * Given the pixel coordinates, return the Vec2 associated with that position.
 	 */
-	this.getVectorAt = function(x, y) {
-		x = ~~(x * _sizeMulti);
-		y = ~~(y * _sizeMulti);
-		return this.grid[x][y];
+	this.getVectorAt = function(pos) {
+		var x = ~~(pos.x * _sizeMulti);
+		var y = ~~(pos.y * _sizeMulti);
+		if (this.grid[x] && this.grid[x][y]) {
+			return this.grid[x][y];
+		}
+		return null;
 	};
 	
+	/**
+	 * Flips the flow switch at the provided pixel coordinates, so it will either become passable, or not.
+	 */
 	this.setBlockAt = function(x, y) {
 		x = ~~(x * _sizeMulti);
 		y = ~~(y * _sizeMulti);
@@ -198,6 +210,9 @@ return function FlowGrid(cellSize, width, height) {
 		return str;
 	};
 	
+	this.log = function() {
+		console.log(this.toString());
+	};
 	
 	init();
 	function init() {

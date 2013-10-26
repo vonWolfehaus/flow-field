@@ -14,27 +14,47 @@
 			overflow: hidden;
 			width: 100%;
 			height: 100%;
+			background-image: url(img/grid_bg.png);
+			text-align: center;
+			user-select: none;
+			-moz-user-select: none;
+			-webkit-user-select: none;
 		}
 		canvas {
+			pointer-events: none;
 			position: absolute;
 			top: 0;
 			left: 0;
 		}
+		img {
+			display: none;
+		}
+		span.announce {
+			display: block;
+			font-size: 20px;
+			margin-top: 40px;
+		}
 	</style>
+	<script type="text/javascript" src="scripts/lib/dat.gui.min.js"></script>
 	<script type="text/javascript" src="scripts/lib/require.js"></script>
 </head>
 <body>
 
+<canvas id="tilemap"></canvas>
 <canvas id="debug"></canvas>
+
+<span class="announce">Shift+click to draw/erase obstacles</span>
+
+<img src="img/tilesprite.png" id="tilesprite">
 
 <script type="text/javascript">
 	require.config({
 		baseUrl: "scripts",
 	});
-	
-	require(['Main', 'scripts/math/Vec2.js', 'scripts/lib/pixi.js', 'scripts/lib/Signal.js',
+	// data-main does what? ;)
+	require(['Main', 'scripts/engine/DebugDraw.js', 'scripts/math/Vec2.js', 'scripts/lib/pixi.js', 'scripts/lib/Signal.js',
 	        'scripts/lib/linkedlist.js'], function(Main) {
-		var game = new Main(document.getElementById('debug'));
+		var game = new Main();
 	});
 </script>
 </body>
