@@ -2,7 +2,7 @@
 
 Basic implementation of a flow field in conjunction with steering behaviors (boids) based on [this TutsPlus tutorial](http://gamedev.tutsplus.com/tutorials/implementation/goal-based-vector-field-pathfinding/).
 
-See it in action [here](), and get a deeper analysis [over at my blog]().
+[Play with it]() and get an explanation [over at my blog](http://coldconstructs.com/2013/10/flow-field-pathfinding-with-flocking/).
 
 ## Overview
 

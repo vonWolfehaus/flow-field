@@ -1,11 +1,8 @@
 /**
- * gamecore.js - Copyright 2012 Playcraft Labs, Inc. (see licence.txt)
- * linkedlist.js
- * A high-perforance doubly-linked list intended for use in gaming
+ * @source https://github.com/martinwells/gamecore.js
  */
 
 /**
- * @class gamecore.LinkedNode
  * @description
  * Represents an item stored in a linked list.
  */
@@ -17,7 +14,6 @@ LinkedListNode = function() {
 };
 
 /**
- * @class gamecore.LinkedList
  * @description
  * A high-speed doubly linked list of objects. Note that for speed reasons (using a dictionary lookup of
  * cached nodes) there can only be a single instance of an object in the list at the same time. Adding the same
@@ -199,7 +195,6 @@ LinkedList = function() {
 	 * @returns boolean true if the item was removed, false if the item was not on the list
 	 */
 	this.remove = function (obj) {
-		// if (this.showDebug) this.dump('before remove of ' + obj);
 		var node = this.getNode(obj);
 		if (node == null || node.free == true){
 			return false; // ignore this error (trying to remove something not there)
@@ -222,8 +217,7 @@ LinkedList = function() {
 		node.next = null;
 
 		this.length--;
-		// if (this.showDebug) this.dump('after remove');
-
+		
 		return true;
 	};
 	
@@ -309,15 +303,14 @@ LinkedList = function() {
 	 * Outputs the contents of the current list for debugging.
 	 */
 	this.dump = function(msg) {
-		this.debug('====================' + msg + '=====================');
+		console.log('====================' + msg + '=====================');
 		var a = this.first;
-		while (a != null)
-		{
-			this.debug("{" + a.obj.toString() + "} previous=" + ( a.prev ? a.prev.obj : "NULL"));
+		while (a != null) {
+			console.log("{" + a.obj.toString() + "} previous=" + ( a.prev ? a.prev.obj : "NULL"));
 			a = a.next();
 		}
-		this.debug("===================================");
-		this.debug("Last: {" + (this.last ? this.last.obj : 'NULL') + "} " +
+		console.log("===================================");
+		console.log("Last: {" + (this.last ? this.last.obj : 'NULL') + "} " +
 			"First: {" + (this.first ? this.first.obj : 'NULL') + "}");
 	};
 };
