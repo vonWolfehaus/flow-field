@@ -116,14 +116,14 @@ return function Main() {
 			evt.stopPropagation(); // don't let clicks on the gui trigger anything else, it's annoying
 		}, false);
 		
+		gui.width = 200;
+		gui.add(Kai.guiOptions, 'drawVectors');
+		gui.add(Kai.guiOptions, 'flocking');
+		gui.add(Kai.guiOptions, 'collision');
+		gui.add(Kai.guiOptions, 'clearObstacles');
+		
 		Kai.mouse.onDown.add(onMouseDown);
 		Kai.keys.onDown.add(onKeyDown);
-		
-		gui.width = 200;
-		gui.add(Kai.settings, 'drawVectors');
-		gui.add(Kai.settings, 'flocking');
-		gui.add(Kai.settings, 'collision');
-		gui.add(Kai.settings, 'clearObstacles');
 		
 		console.log('[Main] Running');
 		

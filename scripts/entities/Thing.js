@@ -90,8 +90,8 @@ return function Thing(posx, posy) {
 		// DEBUG
 		_self.sprite.mousedown = function(data) {
 			// TODO: check if this guy is in the grid and if not, what the fuck
-			console.log(_self.collider);
-			DebugDraw.circle(_self.position.x, _self.position.y, 25);
+			// console.log(_self.collider);
+			// DebugDraw.circle(_self.position.x, _self.position.y, 25);
 		};
 		
 		// link components

@@ -72,8 +72,8 @@ return function CollisionGrid(cellSize) {
 						m = this.collideBalls(item.collider, other.collider); // separates
 						if (m) {
 							this.resolveCollision(item.collider, other.collider, m); // reacts
-							// item.collider.collisionSignal.dispatch(other);
-							// other.collider.collisionSignal.dispatch(item);
+							// item.collider.collisionSignal.dispatch(other, m);
+							// other.collider.collisionSignal.dispatch(item, m);
 						}
 						
 						cellNode = cellNode.next;

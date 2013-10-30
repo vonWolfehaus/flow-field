@@ -11,7 +11,7 @@ define(['components/input/MouseController', 'components/input/KeyboardController
 		
 		debugCtx: null,
 		components: null,
-		settings: {
+		guiOptions: {
 			drawVectors: true,
 			flocking: true,
 			collision: true,
