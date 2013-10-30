@@ -39,7 +39,7 @@ return function Thing(posx, posy) {
 			if (fieldForce) _accel.copy(fieldForce).normalize();
 			
 			// FLOCK
-			if (Kai.settings.flocking) {
+			if (Kai.guiOptions.flocking) {
 				var flockForce = this.flock.update()/*.multiplyScalar(1.6)*/;
 				_accel.add(flockForce);
 			}

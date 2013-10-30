@@ -35,11 +35,11 @@ return function Main() {
 			allTheThings[i].update();
 		}
 		
-		if (Kai.settings.collision) grid.update();
+		if (Kai.guiOptions.collision) grid.update();
 		
 		Kai.renderer.render(Kai.stage);
 		
-		if (Kai.settings.drawVectors) flow.draw(Kai.debugCtx);
+		if (Kai.guiOptions.drawVectors) flow.draw(Kai.debugCtx);
 		// grid.draw(Kai.debugCtx);
 		
 		// if (timer--) {
