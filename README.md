@@ -1,6 +1,6 @@
-Basic implementation of a flow field in conjunction with steering behaviors (boids) based on [this TutsPlus tutorial](http://gamedev.tutsplus.com/tutorials/implementation/goal-based-vector-field-pathfinding/).
+![screenshot](flow-field.jpg)
 
-[Play with it](http://vonwolfehaus.github.io/flow-field/) and get an explanation [over at my blog](http://coldconstructs.com/2013/10/flow-field-pathfinding-with-flocking/).
+Based on [this TutsPlus tutorial](http://gamedev.tutsplus.com/tutorials/implementation/goal-based-vector-field-pathfinding/). [Play with it](http://vonwolfehaus.github.io/flow-field/) and get an explanation [over at my blog](http://coldconstructs.com/2013/10/flow-field-pathfinding-with-flocking/).
 
 ## Overview
 
@@ -9,3 +9,5 @@ Sometimes called flow fields, vector fields, wavefront expansion, brushfire, and
 This makes pathfinding very large numbers of objects very efficient. However, there are some problems such as local optima. I hoped to solve local optima with flocking--if one entity gets stuck, it will come out of it by following its neighbors out (who did not get stuck).
 
 It didn't work as well as I hoped. I didn't spend enough time placing proper weights on the flocking rules, but just using collision resolution resulted in smoother pathing. Anyway, that's what experiments are for.
+
+[Better flocking alg](http://jabtunes.com/labs/3d/gpuflocking/webgl_gpgpu_flocking6.html#64)?
