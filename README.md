@@ -16,16 +16,6 @@ It didn't work as well as I hoped. I didn't spend enough time placing proper wei
 
 After playing [Planetary Annihilation](http://www.uberent.com/pa/) and witnessing how well [their flow fields](http://youtu.be/5Qyl7h7D1Q8?t=24m30s) worked for pathfinding tons of units at once while maintaining excellent performance, I was interested in trying it myself&#8211;unit movement in RTS games is a huge problem field with a lot of solutions. So I found [this article](http://gamedev.tutsplus.com/tutorials/implementation/goal-based-vector-field-pathfinding/) on the subject and proceeded to hack it out in JavaScript.
 
-<p style="text-align: center;">
-  <span class="button blue"><a href="http://vonwolfehaus.github.io/flow-field/" >View demo</a></span>
-</p>
-
-Besides trying out this goal-based vector field pathfinding, I also wanted to use this opportunity to revisit **steering behaviors** and play with a **componentized base**. I&#8217;ll go over each aspect in turn to talk about what I discovered.
-
-<p style="text-align: center;">
-  <span class="button black"><a href="https://github.com/vonWolfehaus/FlowField" >View source on GitHub</a></span>
-</p>
-
 ## Anatomy of a flow field
 
 The idea is to use Dijkstra&#8217;s algorithm to fill out a grid, starting from a single cell (the goal), with the distance from current cell to that goal cell. On each cell we calculate a vector (direction) derived from the distance value. As entities roll over a cell, we simply apply that vector to the entity&#8217;s velocity. That&#8217;s all there is to it!
